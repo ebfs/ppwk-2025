@@ -21,8 +21,8 @@ defaults:
       type: pages 
     values:
       layout: single #default layout for _pages
-      previous_label: "Edellinen viikko" #pages need weight value to work properly
-      next_label: "Seuraava viikko" #pages need weight value to work properly
+      previous_label: "Edellinen viikko" #legacy from testing
+      next_label: "Seuraava viikko" #legacy from testing
 
 #footer
 footer: "© 2025 ebfs @ github – Rakennettu Jekyllillä"
