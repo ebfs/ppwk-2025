@@ -1,0 +1,17 @@
+{% if page.previous or page.next %}
+<nav class="pagination">
+
+  {% if page.previous %}
+  <a href="{{ page.previous }}" class="pagination--pager" title="{{ page.previous_title | default: page.previous }}">
+    Edellinen viikko
+  </a>
+  {% endif %}
+
+  {% if page.next %}
+  <a href="{{ page.next }}" class="pagination--pager" title="{{ page.next_title | default: page.next }}">
+    Seuraava viikko
+  </a>
+  {% endif %}
+
+</nav>
+{% endif %}
