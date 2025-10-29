@@ -12,5 +12,9 @@ plugins:
 header:
   nav: main #navigaatio @ _data/navigation.yml
 
+collections: #että _pages toimii:
+  pages:
+    output: true
+
 #footer
 footer: "© 2025 ebfs @ github – Rakennettu Jekyllillä"
