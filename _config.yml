@@ -1,4 +1,5 @@
-#metdata & defaults
+baseurl: "/ppwk-2025"
+metdata & defaults
 title: Jekyll:iä käyttävä sivusto
 description: Tervetuloa sivustolle!
 remote_theme: "mmistakes/minimal-mistakes@4.24.0" #github pages backwards compatible versio

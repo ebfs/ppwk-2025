@@ -1,16 +1,16 @@
 #navigaatio
 main:
   - title: "Etusivu"
-    url: /
+    url: "{{ '/' | relative_url }}"
   - title: "Viikko 1"
-    url: /vko1/
+    url: "{{ '/vko1/' | relative_url }}"
   - title: "Viikko 2"
-    url: /vko2/
+    url: "{{ '/vko2/' | relative_url }}"
   - title: "Viikko 3"
-    url: /vko3/
+    url: "{{ '/vko3/' | relative_url }}"
   - title: "Viikko 4"
-    url: /vko4/
+    url: "{{ '/vko4/' | relative_url }}"
   - title: "Viikko 5"
-    url: /vko5/
+    url: "{{ '/vko5/' | relative_url }}"
   - title: "Viikko 6"
-    url: /vko6/
+    url: "{{ '/vko6/' | relative_url }}"
