@@ -2,6 +2,8 @@
 title: "Viikko 2"
 permalink: /vko2/
 weight: 2
+previous: /vko1/
+next: /vko3/
 ---
 
 # Tekemistä riittää
