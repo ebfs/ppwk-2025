@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3"
+gem "jekyll", "~> 4.4"
 gem "minimal-mistakes-jekyll", "~> 4.24"
 gem "jekyll-include-cache"
+gem "jekyll-remote-theme"
