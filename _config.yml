@@ -7,6 +7,7 @@ minimal_mistakes_skin: "dark"
 #plugins
 plugins:
   - jekyll-include-cache
+  - jekyll-remote-theme
   
 header:
   nav: main #navigaatio @ _data/navigation.yml
