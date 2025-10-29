@@ -8,6 +8,11 @@ next: /vko3/
 
 # Tekemistä riittää
 
+### 2.3. Lyhyt kirjoitus
+Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivustoa voisi automatisoida käyttäen GitHub Actions-toimintoja. Vastaa myös millaisilla kehitystyökaluilla ja -tekniikoilla saataisiin CI/CD-putkisto rakennettua web-sovellukselle. Tekstimäärä noin 150 sanaa.
+
+### Omaa kontsaa
+
 Noniin. Tässä ollaan tehty useampi asia. Sivusto käyttää nyt **Jekyll:iä** ja **minimal-mistakes** -teemaa.  
 
 Tosiaan GitHub Pages ei voi käyttää uusinta versiota, joten käytössä on:
@@ -18,7 +23,7 @@ remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 Tämä on viimeisin versio, joka toimii GitHub Pagesin kanssa.
 
-Minimal-mistakes käyttää automaattisesti englanninkielisiä tekstejä (Previous ja Next sivun alalaidalla), joten halusin muokata nämä. Huhhuh, mikä vuoristorata!
+Minimal-mistakes käyttää automaattisesti englanninkielisiä tekstejä (Previous ja Next sivun alalaidalla), joten halusin muokata nämä. Ja huhhuh tämä oli vuoristorata muokata:
 
 
 ```yaml
@@ -55,7 +60,7 @@ Niinpä mentiin rakentamaan sivustoa `Jekyll 4.x` versiolla, mikä vaatii oman G
 - Tarvittavat pluginit
 ```
 
-Kaikki nämä tehtyään, ja kun sivusto rakennetaan eri buildille (gh-pages build), halutut suomalaiset tunnisteet eivät vieläkään toimineet.
+Kaikki nämä tehtyään halutut suomalaiset tunnisteet eivät vieläkään toimineet.
 
 Okei, ratkaisu:
 
@@ -82,3 +87,4 @@ fi:
 
 Ja build ja deploy ja VIIMEINKIN TOIMII. Ei siinä mennyt kun 3-4 tuntia kikkailua ja ~40 deployment:ii.
 
+Ehkä voin nyt palata tehtävien pariin.
