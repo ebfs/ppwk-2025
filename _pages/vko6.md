@@ -1,6 +1,7 @@
 ---
 title: "Viikko 6"
 permalink: /vko6/
+weight: 6
 ---
 
 
