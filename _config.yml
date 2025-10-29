@@ -8,22 +8,8 @@ minimal_mistakes_skin: "dark"
 plugins:
   - jekyll-include-cache
   
-#navigaatio
-nav:
-  - title: "Etusivu"
-    url: /
-  - title: "Viikko 1"
-    url: /vko1.md
-  - title: "Viikko 2"
-    url: /vko2.md
-  - title: "Viikko 3"
-    url: /vko3.md
-  - title: "Viikko 4"
-    url: /vko4.md
-  - title: "Viikko 5"
-    url: /vko5.md
-  - title: "Viikko 6"
-    url: /vko6.md
+header:
+  nav: main #navigaatio @ _data/navigation.yml
 
 #footer
 footer: "© 2025 ebfs @ github – Rakennettu Jekyllillä"
