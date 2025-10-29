@@ -1,7 +1,8 @@
 ---
-layout: home
-title: Viikko 4
+title: "Viikko 4"
+permalink: /vko4/
 ---
+
 
 # ABDEFG
 

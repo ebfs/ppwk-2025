@@ -1,5 +1,5 @@
 ---
-title: Welcome
+layout: home
 ---
 
 # Hello World

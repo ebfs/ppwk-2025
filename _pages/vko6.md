@@ -1,7 +1,8 @@
 ---
-layout: home
-title: Viikko 6
+title: "Viikko 6"
+permalink: /vko6/
 ---
+
 
 # ABDEFG
 
