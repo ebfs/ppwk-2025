@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Viikko 2 - Jekyll:iä käyttävä sivusto</title>
-<meta name="description" content="ABDEFG">
+<meta name="description" content="Tekemistä riittää">
 
 
 
@@ -21,7 +21,7 @@
 <meta property="og:url" content="/ppwk-2025/vko2/">
 
 
-  <meta property="og:description" content="ABDEFG">
+  <meta property="og:description" content="Tekemistä riittää">
 
 
 
@@ -29,7 +29,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-10-29T21:28:31+00:00">
+  <meta property="article:published_time" content="2025-10-29T21:45:23+00:00">
 
 
 
@@ -149,8 +149,8 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Viikko 2">
-    <meta itemprop="description" content="ABDEFG">
-    <meta itemprop="datePublished" content="2025-10-29T21:28:31+00:00">
+    <meta itemprop="description" content="Tekemistä riittää">
+    <meta itemprop="datePublished" content="2025-10-29T21:45:23+00:00">
     
 
     <div class="page__inner-wrap">
@@ -166,9 +166,60 @@
 
       <section class="page__content" itemprop="text">
         
-        <h1 id="abdefg">ABDEFG</h1>
+        <h1 id="tekemistä-riittää">Tekemistä riittää</h1>
 
-<p>This is my first Jekyll site!</p>
+<p>Noniin. Tässä ollaan tehty useampi asia. Sivusto käyttää nyt <strong>Jekyll:iä</strong> ja <strong>minimal-mistakes</strong> -teemaa.</p>
+
+<p>Tosiaan GitHub Pages ei voi käyttää uusinta versiota, joten käytössä on:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">remote_theme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mmistakes/minimal-mistakes@4.24.0"</span>
+</code></pre></div></div>
+
+<p>Tämä on viimeisin versio, joka toimii GitHub Pagesin kanssa.</p>
+
+<p>Minimal-mistakes käyttää automaattisesti englanninkielisiä tekstejä (Previous ja Next sivun alalaidalla), joten halusin muokata nämä. Huhhuh, mikä vuoristorata!</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">pages</span> 
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s">single</span> <span class="c1"># default layout for _pages</span>
+      <span class="na">previous_label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Edellinen</span><span class="nv"> </span><span class="s">viikko"</span> <span class="c1"># legacy from testing</span>
+      <span class="na">next_label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Seuraava</span><span class="nv"> </span><span class="s">viikko"</span> <span class="c1"># legacy from testing</span>
+</code></pre></div></div>
+
+<p>Tämä ei kuitenkaan toiminut.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Viikko</span><span class="nv"> </span><span class="s">2"</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/vko2/</span>
+<span class="na">weight</span><span class="pi">:</span> <span class="m">2</span>
+<span class="na">previous</span><span class="pi">:</span> <span class="s">/vko1/</span>
+<span class="na">previous_label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Edellinen</span><span class="nv"> </span><span class="s">viikko"</span>
+<span class="na">next</span><span class="pi">:</span> <span class="s">/vko3/</span>
+<span class="na">next_label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Seuraava</span><span class="nv"> </span><span class="s">viikko"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>Tämäkään ei toiminut. GitHubin <code class="language-plaintext highlighter-rouge">Jekyll version 3.x</code>:ssä next_label ja previous_label eivät kuulemma toimi.
+Niinpä mentiin rakentamaan sivustoa <code class="language-plaintext highlighter-rouge">Jekyll 4.x</code> versiolla, mikä vaatii oman GitHub Actions workflowin. Tähän malliin lisättiin:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Gemfile
+- GitHub Actions workflow (jekyll.yml)
+- Tarvittavat pluginit
+</code></pre></div></div>
+
+<p>Kaikki nämä tehtyään, ja kun sivusto rakennetaan eri buildille (gh-pages build), halutut suomalaiset tunnisteet eivät vieläkään toimineet.</p>
+
+<p>Okei, ratkaisu:</p>
+
+<ul>
+  <li>Lisätään _includes -hakemistoon suoraan minimal-mistakes -reposta <code class="language-plaintext highlighter-rouge">paginator-v1.html</code> ja <code class="language-plaintext highlighter-rouge">paginator-v2.html</code>.</li>
+  <li>Hardkoodataan halutut tekstit suoraan sinne.</li>
+</ul>
+
+<p>Tämän jälkeen testataan, toimiiko päivitys ja näyttävätkö edellinen / seuraava -painikkeet nyt suomeksi.</p>
 
         
       </section>
@@ -180,7 +231,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-10-29T21:28:31+00:00">October 29, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-10-29T21:45:23+00:00">October 29, 2025</time></p>
 
 
       </footer>

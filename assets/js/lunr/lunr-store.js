@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Viikko 2",
-        "excerpt":"ABDEFG   This is my first Jekyll site!  ","categories": [],
+        "excerpt":"Tekemistä riittää Noniin. Tässä ollaan tehty useampi asia. Sivusto käyttää nyt Jekyll:iä ja minimal-mistakes -teemaa. Tosiaan GitHub Pages ei voi käyttää uusinta versiota, joten käytössä on: remote_theme: \"mmistakes/minimal-mistakes@4.24.0\" Tämä on viimeisin versio, joka toimii GitHub Pagesin kanssa. Minimal-mistakes käyttää automaattisesti englanninkielisiä tekstejä (Previous ja Next sivun alalaidalla), joten halusin muokata...","categories": [],
         "tags": [],
         "url": "/ppwk-2025/vko2/",
         "teaser": null
