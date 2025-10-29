@@ -1,7 +1,10 @@
+#metdata
 title: Jekyll:iä käyttävä sivusto
 description: Tervetuloa sivustolle!
-theme: jekyll-theme-hacker
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "dark"
 
+#navigaatio
 nav:
   - title: "Etusivu"
     url: /
@@ -18,4 +21,5 @@ nav:
   - title: "Viikko 6"
     url: /vko6.md
 
+#footer
 footer: "© 2025 ebfs @ github – Rakennettu Jekyllillä"
