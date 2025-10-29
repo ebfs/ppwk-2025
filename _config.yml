@@ -1,7 +1,7 @@
 #metdata
 title: Jekyll:iä käyttävä sivusto
 description: Tervetuloa sivustolle!
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "dark"
 
 #navigaatio
