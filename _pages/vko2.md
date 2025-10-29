@@ -63,3 +63,22 @@ Okei, ratkaisu:
 - Hardkoodataan halutut tekstit suoraan sinne.
 
 Tämän jälkeen testataan, toimiiko päivitys ja näyttävätkö edellinen / seuraava -painikkeet nyt suomeksi.
+
+...
+
+Ei, ei toimi. Lisäsin vielä `post_pagination.html` ja modifoin sitä. Eipä juuri toimi lainkaan.
+
+Viimeinen kikka lisätä fi lokalisaatio config tiedostoon:
+
+```yaml
+locale: fi
+```
+ja `_data`:aan:
+```yaml
+fi:
+  pagination_previous: "Edellinen viikko"
+  pagination_next: "Seuraava viikko"
+```
+
+Ja build ja deploy ja VIIMEINKIN TOIMII. Ei siinä mennyt kun 3-4 tuntia kikkailua ja ~40 deployment:ii.
+
