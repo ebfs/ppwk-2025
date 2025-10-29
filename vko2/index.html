@@ -29,7 +29,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-10-29T22:21:47+00:00">
+  <meta property="article:published_time" content="2025-10-29T22:29:12+00:00">
 
 
 
@@ -150,7 +150,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Viikko 2">
     <meta itemprop="description" content="Tekemistä riittää">
-    <meta itemprop="datePublished" content="2025-10-29T22:21:47+00:00">
+    <meta itemprop="datePublished" content="2025-10-29T22:29:12+00:00">
     
 
     <div class="page__inner-wrap">
@@ -221,6 +221,23 @@ Niinpä mentiin rakentamaan sivustoa <code class="language-plaintext highlighter
 
 <p>Tämän jälkeen testataan, toimiiko päivitys ja näyttävätkö edellinen / seuraava -painikkeet nyt suomeksi.</p>
 
+<p>…</p>
+
+<p>Ei, ei toimi. Lisäsin vielä <code class="language-plaintext highlighter-rouge">post_pagination.html</code> ja modifoin sitä. Eipä juuri toimi lainkaan.</p>
+
+<p>Viimeinen kikka lisätä fi lokalisaatio config tiedostoon:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">locale</span><span class="pi">:</span> <span class="s">fi</span>
+</code></pre></div></div>
+<p>ja <code class="language-plaintext highlighter-rouge">_data</code>:aan:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">fi</span><span class="pi">:</span>
+  <span class="na">pagination_previous</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Edellinen</span><span class="nv"> </span><span class="s">viikko"</span>
+  <span class="na">pagination_next</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Seuraava</span><span class="nv"> </span><span class="s">viikko"</span>
+</code></pre></div></div>
+
+<p>Ja build ja deploy ja VIIMEINKIN TOIMII. Ei siinä mennyt kun 3-4 tuntia kikkailua ja ~40 deployment:ii.</p>
+
+
         
       </section>
 
@@ -231,7 +248,7 @@ Niinpä mentiin rakentamaan sivustoa <code class="language-plaintext highlighter
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Päivitetty:</strong> <time datetime="2025-10-29T22:21:47+00:00">October 29, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Päivitetty:</strong> <time datetime="2025-10-29T22:29:12+00:00">October 29, 2025</time></p>
 
 
       </footer>
