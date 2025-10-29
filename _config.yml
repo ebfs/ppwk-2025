@@ -21,6 +21,8 @@ defaults:
       type: pages 
     values:
       layout: single #default layout for _pages
+      previous_label: "Edellinen viikko"
+      next_label: "Seuraava viikko"
 
 #footer
 footer: "© 2025 ebfs @ github – Rakennettu Jekyllillä"
