@@ -1,4 +1,10 @@
 var store = [{
+        "title": "Harjoitustyö",
+        "excerpt":"Lämmittely   Mitäs tänne kannattaisi edes laittaa? Vanha sivusto joka käytti index.html ja styles.css ei ole enää käytössä.   GitHubissa vanhat tiedostot löytyvät täältä  ","categories": [],
+        "tags": [],
+        "url": "/ppwk-2025/vko1/",
+        "teaser": null
+      },{
         "title": "Viikko 1",
         "excerpt":"Lämmittely   Mitäs tänne kannattaisi edes laittaa? Vanha sivusto joka käytti index.html ja styles.css ei ole enää käytössä.   GitHubissa vanhat tiedostot löytyvät täältä  ","categories": [],
         "tags": [],
@@ -6,7 +12,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Viikko 2",
-        "excerpt":"Tekemistä riittää Noniin. Tässä ollaan tehty useampi asia. Sivusto käyttää nyt Jekyll:iä ja minimal-mistakes -teemaa. Tosiaan GitHub Pages ei voi käyttää uusinta versiota, joten käytössä on: remote_theme: \"mmistakes/minimal-mistakes@4.24.0\" Tämä on viimeisin versio, joka toimii GitHub Pagesin kanssa. Minimal-mistakes käyttää automaattisesti englanninkielisiä tekstejä (Previous ja Next sivun alalaidalla), joten halusin muokata...","categories": [],
+        "excerpt":"Tekemistä riittää 2.3. Lyhyt kirjoitus Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivustoa voisi automatisoida käyttäen GitHub Actions-toimintoja. Vastaa myös millaisilla kehitystyökaluilla ja -tekniikoilla saataisiin CI/CD-putkisto rakennettua web-sovellukselle. Tekstimäärä noin 150 sanaa. Omaa kontsaa Noniin. Tässä ollaan tehty useampi asia. Sivusto käyttää nyt Jekyll:iä ja minimal-mistakes...","categories": [],
         "tags": [],
         "url": "/ppwk-2025/vko2/",
         "teaser": null
