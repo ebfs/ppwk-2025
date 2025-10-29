@@ -1,6 +1,6 @@
 var store = [{
         "title": "Viikko 1",
-        "excerpt":"ABDEFG   This is my first Jekyll site!  ","categories": [],
+        "excerpt":"Lämmittely   Mitäs tänne kannattaisi edes laittaa? Vanha sivusto joka käytti index.html ja styles.css ei ole enää käytössä.   GitHubissa vanhat tiedostot löytyvät täältä  ","categories": [],
         "tags": [],
         "url": "/ppwk-2025/vko1/",
         "teaser": null
