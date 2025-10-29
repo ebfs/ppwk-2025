@@ -3,7 +3,6 @@ title: Jekyll:iä käyttävä sivusto
 description: Tervetuloa sivustolle!
 remote_theme: "mmistakes/minimal-mistakes@4.24.0" #github pages backwards compatible versio
 minimal_mistakes_skin: "dark"
-layout: single
 
 #plugins
 plugins:
@@ -15,6 +14,13 @@ header:
 collections: #että _pages toimii:
   pages:
     output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: pages 
+    values:
+      layout: single #default layout for _pages
 
 #footer
 footer: "© 2025 ebfs @ github – Rakennettu Jekyllillä"
