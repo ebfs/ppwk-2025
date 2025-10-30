@@ -12,7 +12,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Viikko 2",
-        "excerpt":"Tekemistä riittää 2.3. Lyhyt kirjoitus Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivustoa voisi automatisoida käyttäen GitHub Actions-toimintoja. Vastaa myös millaisilla kehitystyökaluilla ja -tekniikoilla saataisiin CI/CD-putkisto rakennettua web-sovellukselle. Tekstimäärä noin 150 sanaa. Omaa kontsaa Noniin. Tässä ollaan tehty useampi asia. Sivusto käyttää nyt Jekyll:iä ja minimal-mistakes...","categories": [],
+        "excerpt":"Tekemistä riittää 2.3. Lyhyt kirjoitus Tämä sivusto on jo itseasiassa automatisoitu GitHub Actionsillä. jekyll.yml workflow hakee projektin GitHubista, asentaa Ruby-ympäriston käyttämään Bundler välimuistin (nopeuttaa toimintaa mustalla magialla), asentaa kirjastot mitkä ovat määritelty Gemfile:ssä: source \"https://rubygems.org\" gem \"jekyll\", \"~&gt; 4.4\" gem \"minimal-mistakes-jekyll\", \"~&gt; 4.24\" gem \"jekyll-include-cache\" gem \"jekyll-remote-theme\" Sitten luo sivuston...","categories": [],
         "tags": [],
         "url": "/ppwk-2025/vko2/",
         "teaser": null
