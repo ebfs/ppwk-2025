@@ -10,6 +10,7 @@ locale: fi
 plugins:
   - jekyll-include-cache
   - jekyll-remote-theme
+  - jekyll-feed
   
 header:
   nav: main #navigaatio @ _data/navigation.yml
