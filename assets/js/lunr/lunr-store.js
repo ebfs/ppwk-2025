@@ -1,6 +1,6 @@
 var store = [{
         "title": "Harjoitustyö",
-        "excerpt":"Harjoitustyö  ","categories": [],
+        "excerpt":" ","categories": [],
         "tags": [],
         "url": "/ppwk-2025/harjoitustyo/",
         "teaser": null
