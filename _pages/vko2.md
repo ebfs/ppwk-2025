@@ -87,4 +87,4 @@ fi:
 
 Ja build ja deploy ja VIIMEINKIN TOIMII. Ei siinä mennyt kun 3-4 tuntia kikkailua ja ~40 deployment:ii.
 
-Ehkä voin nyt palata tehtävien pariin.
+Pahoittelut, että tämä osa ei ole ollut kovin suoraviivainen. Dokumentaatio tehtiin pääosin vasta testailun jälkeen.
