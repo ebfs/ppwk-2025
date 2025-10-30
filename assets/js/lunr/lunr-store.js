@@ -1,8 +1,8 @@
 var store = [{
         "title": "Harjoitustyö",
-        "excerpt":"Lämmittely   Mitäs tänne kannattaisi edes laittaa? Vanha sivusto joka käytti index.html ja styles.css ei ole enää käytössä.   GitHubissa vanhat tiedostot löytyvät täältä  ","categories": [],
+        "excerpt":"ABCDEFG   Mitäs tänne kannattaisi edes laittaa? Vanha sivusto joka käytti index.html ja styles.css ei ole enää käytössä.   GitHubissa vanhat tiedostot löytyvät täältä  ","categories": [],
         "tags": [],
-        "url": "/ppwk-2025/vko1/",
+        "url": "/ppwk-2025/harjoitustyo/",
         "teaser": null
       },{
         "title": "Viikko 1",
