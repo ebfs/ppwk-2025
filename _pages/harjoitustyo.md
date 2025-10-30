@@ -1,8 +1,7 @@
 ---
 title: "Harjoitustyö"
 permalink: /harjoitustyo/
-weight: 7
-previous: /vko6/
+pagination: false
 ---
 
-# ABCDEFG
+# Harjoitustyö
