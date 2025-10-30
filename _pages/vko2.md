@@ -9,7 +9,19 @@ next: /vko3/
 # Tekemistä riittää
 
 ### 2.3. Lyhyt kirjoitus
-Tee viikolle 2 oma sivu (esimerkiksi vko2.md), jossa kuvailet miten Jekyll sivustoa voisi automatisoida käyttäen GitHub Actions-toimintoja. Vastaa myös millaisilla kehitystyökaluilla ja -tekniikoilla saataisiin CI/CD-putkisto rakennettua web-sovellukselle. Tekstimäärä noin 150 sanaa.
+
+Tämä sivusto on jo itseasiassa automatisoitu GitHub Actionsillä. `jekyll.yml` workflow hakee projektin GitHubista, asentaa Ruby-ympäriston käyttämään Bundler välimuistin (nopeuttaa toimintaa mustalla magialla), asentaa kirjastot mitkä ovat määritelty Gemfile:ssä:
+```
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.4"
+gem "minimal-mistakes-jekyll", "~> 4.24"
+gem "jekyll-include-cache"
+gem "jekyll-remote-theme"
+```
+Sitten luo sivuston `_site` kansioon, ja julkaisee sivuston GitHub Pages:iin. Täten kun muutoksia pusketaan `main` branch:iin, sivusto rakentuu automaattisesti ja julkaisee ne `gh-pages` branch:iin. Tämä on yksinkertainen CI/CD putkisto.
+
+Firmassa missä olen töissä käytetään Jenkins automaatioalustaa, jota käytetään erityisesti CI/CD putkistojen rakentamiseen. Jenkins mahdollistaa koodin rakentamisen, testaamisen, ja julkaimisen automaattisesti kun muutoksia tehdään versionhallintaan. Jenkins:iin löytyy paljon plugin:eja eri rakennustyökaluille ja pilvipalveluille. Firmassa eräs dokumentaatio sivusto rakennetaan käyttäen Sphinx (documentation generator) ja Jenkins. Sphinx generoi dokumentaation `HTML` muodossa ja Jenkins hoitaa buildin ja deploymentin automaattisesti.
 
 ### Omaa kontsaa
 
