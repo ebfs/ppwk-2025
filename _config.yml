@@ -18,6 +18,8 @@ header:
 collections: #että _pages toimii:
   pages:
     output: true
+  ht:
+    output: true
 
 defaults:
   - scope:
