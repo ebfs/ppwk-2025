@@ -11,7 +11,7 @@ next: /vko3/
 ### 2.3. Lyhyt kirjoitus
 
 Tämä sivusto on jo itseasiassa automatisoitu GitHub Actionsillä. `jekyll.yml` workflow hakee projektin GitHubista, asentaa Ruby-ympäriston käyttämään Bundler välimuistin (nopeuttaa toimintaa mustalla magialla), asentaa kirjastot mitkä ovat määritelty Gemfile:ssä:
-```Gemfile
+```
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.4"
