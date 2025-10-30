@@ -11,7 +11,7 @@ next: /vko3/
 ### 2.3. Lyhyt kirjoitus
 
 Tämä sivusto on jo itseasiassa automatisoitu GitHub Actionsillä. `jekyll.yml` workflow hakee projektin GitHubista, asentaa Ruby-ympäriston käyttämään Bundler välimuistin (nopeuttaa toimintaa mustalla magialla), asentaa kirjastot mitkä ovat määritelty Gemfile:ssä:
-```
+```Gemfile
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.4"
@@ -100,3 +100,7 @@ fi:
 Ja build ja deploy ja VIIMEINKIN TOIMII. Ei siinä mennyt kun 3-4 tuntia kikkailua ja ~40 deployment:ii.
 
 Pahoittelut, että tämä osa ei ole ollut kovin suoraviivainen. Dokumentaatio tehtiin pääosin vasta testailun jälkeen.
+
+Päivitettään vielä `remote_theme: "mmistakes/minimal-mistakes@4.24.0"` -> `remote_theme: "mmistakes/minimal-mistakes@4.27.3"`
+
+Voikohan olla että haluamani muutokset eivät toimineet koska oli 4.24 versio käytössä. Olisi kenties pitänyt tarkistaa. Noh, tekemällä oppii.

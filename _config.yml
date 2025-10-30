@@ -2,7 +2,7 @@
 baseurl: "/ppwk-2025"
 title: Pilvipalvelut web-kehityksessä
 description: Tervetuloa sivustolle!
-remote_theme: "mmistakes/minimal-mistakes@4.24.0" #github pages backwards compatible versio
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 minimal_mistakes_skin: "dark"
 locale: fi
 
