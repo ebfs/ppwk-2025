@@ -1,7 +1,7 @@
 #navigaatio
 main:
-  - title: "Etusivu"
-    url: "/"
+  #- title: "Etusivu"
+  #  url: "/"
   - title: "Viikko 1"
     url: "/vko1/"
   - title: "Viikko 2"
@@ -14,3 +14,5 @@ main:
     url: "/vko5/"
   - title: "Viikko 6"
     url: "/vko6/"
+  - title: "Harjoitustyö"
+    url: "/harjoitustyo/"

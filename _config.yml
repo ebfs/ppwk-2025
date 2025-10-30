@@ -1,6 +1,6 @@
 #metdata
 baseurl: "/ppwk-2025"
-title: EBFS / Pilvipalvelut web-kehityksessä
+title: Pilvipalvelut web-kehityksessä
 description: Tervetuloa sivustolle!
 remote_theme: "mmistakes/minimal-mistakes@4.24.0" #github pages backwards compatible versio
 minimal_mistakes_skin: "dark"
