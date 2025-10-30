@@ -23,7 +23,7 @@ Sitten luo sivuston `_site` kansioon, ja julkaisee sivuston GitHub Pages:iin. T�
 
 Firmassa missä olen töissä käytetään Jenkins automaatioalustaa, jota käytetään erityisesti CI/CD putkistojen rakentamiseen. Jenkins mahdollistaa koodin rakentamisen, testaamisen, ja julkaimisen automaattisesti kun muutoksia tehdään versionhallintaan. Jenkins:iin löytyy paljon plugin:eja eri rakennustyökaluille ja pilvipalveluille. Firmassa eräs dokumentaatio sivusto rakennetaan käyttäen Sphinx (documentation generator) ja Jenkins. Sphinx generoi dokumentaation `HTML` muodossa ja Jenkins hoitaa buildin ja deploymentin automaattisesti.
 
-### Omaa kontsaa
+### Omaa kontsaa (ei liity tehtäviin)
 
 Noniin. Tässä ollaan tehty useampi asia. Sivusto käyttää nyt **Jekyll:iä** ja **minimal-mistakes** -teemaa.  
 
