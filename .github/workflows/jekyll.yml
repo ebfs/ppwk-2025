@@ -27,8 +27,8 @@ jobs:
 
       # 5. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4 #most widely used GitHub Action for deploying static sites
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }} #bot needs readwrite privilege to work, check box in settings
           publish_dir: ./_site
-          publish_branch: gh-pages
+          publish_branch: gh-pages #target branch, nimi voi olla käytännössä mikä tahansa
