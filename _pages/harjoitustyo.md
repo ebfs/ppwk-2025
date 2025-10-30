@@ -1,11 +1,11 @@
 ---
 title: "Harjoitustyö"
-permalink: /vko1/
+permalink: /harjoitustyo/
 weight: 7
 previous: /vko6/
 ---
 
-# Lämmittely
+# ABCDEFG
 
 Mitäs tänne kannattaisi edes laittaa? Vanha sivusto joka käytti index.html ja styles.css ei ole enää käytössä.
 
