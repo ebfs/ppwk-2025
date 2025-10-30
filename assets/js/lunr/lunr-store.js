@@ -1,6 +1,6 @@
 var store = [{
         "title": "Harjoitustyö",
-        "excerpt":"ABCDEFG   Mitäs tänne kannattaisi edes laittaa? Vanha sivusto joka käytti index.html ja styles.css ei ole enää käytössä.   GitHubissa vanhat tiedostot löytyvät täältä  ","categories": [],
+        "excerpt":"ABCDEFG  ","categories": [],
         "tags": [],
         "url": "/ppwk-2025/harjoitustyo/",
         "teaser": null
