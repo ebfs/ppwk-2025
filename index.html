@@ -225,7 +225,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-fetch('/ppwk-2025/_data/daily-deployments.json')
+fetch('/ppwk-2025/assets/daily-deployments.json')
   .then(r => r.json())
   .then(data => {
     const labels = data.map(d => d.date);
