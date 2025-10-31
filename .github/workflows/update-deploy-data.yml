@@ -59,3 +59,4 @@ jobs:
             git add assets/daily-deployments.json
             git commit -m "[AUTO] update daily deployment stats"
             git push
+          fi
