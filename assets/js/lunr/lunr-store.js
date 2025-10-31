@@ -18,7 +18,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Viikko 3",
-        "excerpt":"ABDEFG   This is my first Jekyll site!  ","categories": [],
+        "excerpt":"Vite + React App   Vite-sovellus React-sovellus  ","categories": [],
         "tags": [],
         "url": "/ppwk-2025/vko3/",
         "teaser": null
