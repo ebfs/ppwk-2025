@@ -47,9 +47,30 @@ fetch('{{ site.baseurl }}/assets/daily-deployments.json')
       },
       options: {
         responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: '#ffffff'
+            }
+          }
+        },
         scales: {
-          y: { beginAtZero: true },
-          x: { title: { display: true, text: 'Date' } }
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: '#ffffff'
+            }
+          },
+          x: {
+            ticks: {
+              color: '#ffffff'
+            },
+            title: {
+              display: true,
+              text: 'Date',
+              color: '#ffffff' 
+            }
+          }
         }
       }
     });
