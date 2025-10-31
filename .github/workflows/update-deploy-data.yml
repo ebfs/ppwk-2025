@@ -38,6 +38,6 @@ jobs:
             git config user.name "github-actions"
             git config user.email "github-actions@github.com"
             git add _data/daily-deployments.json
-            git commit -m "Update daily deployment stats"
+            git commit -m "[AUTO] update daily deployment stats"
             git push
           fi

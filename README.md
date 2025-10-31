@@ -7,3 +7,4 @@
 | `vko6` | Viikko 6 liittyvien tehtävien commit.    |
 | `HT`   | Harjoitustyö commit.                     |
 | `MAINT`| Maintenance commit.                      |
+| `AUTO` | Automation commit.                       |

@@ -4,7 +4,7 @@ title: "Jekyll:iä käyttävä sivusto"
 subtitle: "ebfs"
 ---
 
-# [GitHub repo location](https://github.com/ebfs/ppwk-2025)
+## [GitHub repo location](https://github.com/ebfs/ppwk-2025)
 
 | GitHub commit tag   | Selite                      |
 |--------|------------------------------------------|
@@ -15,8 +15,9 @@ subtitle: "ebfs"
 | `vko6` | Viikko 6 liittyvien tehtävien commit.    |
 | `HT`   | Harjoitustyö commit.                     |
 | `MAINT`| Maintenance commit.                      |
+| `AUTO` | Automation commit.                       |
 
-## commits # kaavio
+## commits kaavio
 
 <canvas id="deployChart" width="400" height="200"></canvas>
 
