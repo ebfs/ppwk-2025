@@ -16,8 +16,9 @@ subtitle: "ebfs"
 | `HT`   | Harjoitustyö commit.                     |
 | `MAINT`| Maintenance commit.                      |
 | `AUTO` | Automation commit.                       |
+| `DOC`  | Documentation commit.                    |
 
-## commits kaavio
+## Commits kaavio
 
 <canvas id="deployChart" width="400" height="200"></canvas>
 

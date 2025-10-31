@@ -10,4 +10,4 @@
 | `HT`   | Harjoitustyö commit.                     |
 | `MAINT`| Maintenance commit.                      |
 | `AUTO` | Automation commit.                       |
-
+| `DOC`  | Documentation commit.                    |
