@@ -40,3 +40,4 @@ jobs:
             git add _data/daily-deployments.json
             git commit -m "Update daily deployment stats"
             git push
+          fi
