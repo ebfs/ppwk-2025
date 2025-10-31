@@ -18,16 +18,35 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Generate JSON of commits per day
+      # Generate JSON of commits per day (including empty days)
       - name: Generate JSON of commits per day
         run: |
           mkdir -p assets
+
+          # Get all commit dates
+          dates=$(git log --date=short --pretty="%ad")
+
+          # Find first and last date
+          first_date=$(echo "$dates" | sort | head -n1)
+          last_date=$(date +%Y-%m-%d)  # today
+
+          # Build all dates in range
+          all_dates=$(seq $(date -d "$first_date" +%s) 86400 $(date -d "$last_date" +%s) \
+            | awk '{print strftime("%Y-%m-%d",$1)}')
+
+          # Count commits per day
+          declare -A counts
+          for d in $dates; do
+            counts["$d"]=$((counts["$d"] + 1))
+          done
+
+          # Write JSON
           echo "[" > assets/daily-deployments.json
-          git log --date=short --pretty="%ad" \
-            | sort \
-            | uniq -c \
-            | awk '{printf "  { \"date\": \"%s\", \"count\": %s },\n", $2, $1}' \
-            >> assets/daily-deployments.json
+          for d in $all_dates; do
+            c=${counts[$d]:-0}
+            echo "  { \"date\": \"$d\", \"count\": $c }," >> assets/daily-deployments.json
+          done
+          # Remove trailing comma and close array
           sed -i '$ s/,$//' assets/daily-deployments.json
           echo "]" >> assets/daily-deployments.json
 
@@ -40,4 +59,3 @@ jobs:
             git add assets/daily-deployments.json
             git commit -m "[AUTO] update daily deployment stats"
             git push
-          fi
