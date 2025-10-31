@@ -1,3 +1,5 @@
+## Jekyll:iä käyttävä sivusto
+
 | GitHub commit tag   | Selite                      |
 |--------|------------------------------------------|
 | `vko2` | Viikko 2 liittyvien tehtävien commit.    |
@@ -8,3 +10,4 @@
 | `HT`   | Harjoitustyö commit.                     |
 | `MAINT`| Maintenance commit.                      |
 | `AUTO` | Automation commit.                       |
+
