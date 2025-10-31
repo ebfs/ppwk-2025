@@ -5,36 +5,38 @@ on:
     branches:
       - main
     paths-ignore:
-      - 'data/daily-deployments.json'
-  workflow_dispatch:
+      - '_data/daily-deployments.json'  # prevents infinite loop from JSON update
+  workflow_dispatch:  # optional manual run
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
+      # Checkout full history
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
+      # Generate JSON of commits per day
       - name: Generate JSON of commits per day
         run: |
-          mkdir -p data
-          echo "[" > data/daily-deployments.json
+          mkdir -p _data
+          echo "[" > _data/daily-deployments.json
           git log --date=short --pretty="%ad" \
             | sort \
             | uniq -c \
             | awk '{printf "  { \"date\": \"%s\", \"count\": %s },\n", $2, $1}' \
-            >> data/daily-deployments.json
-          sed -i '$ s/,$//' data/daily-deployments.json
-          echo "]" >> data/daily-deployments.json
+            >> _data/daily-deployments.json
+          sed -i '$ s/,$//' _data/daily-deployments.json
+          echo "]" >> _data/daily-deployments.json
 
+      # Commit changes if the JSON updated
       - name: Commit changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions"
             git config user.email "github-actions@github.com"
-            git add data/daily-deployments.json
-            git commit -m "Update deployment stats"
+            git add _data/daily-deployments.json
+            git commit -m "Update daily deployment stats"
             git push
-          fi
