@@ -23,13 +23,16 @@ subtitle: "ebfs"
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-fetch('/data/daily-deployments.json')
+fetch('{{ site.baseurl }}/_data/daily-deployments.json')
   .then(r => r.json())
   .then(data => {
     const labels = data.map(d => d.date);
     const counts = data.map(d => d.count);
 
     const ctx = document.getElementById('deployChart').getContext('2d');
+
+    const pageBgColor = window.getComputedStyle(document.body).backgroundColor;
+
     new Chart(ctx, {
       type: 'bar',
       data: {
@@ -37,12 +40,16 @@ fetch('/data/daily-deployments.json')
         datasets: [{
           label: 'Commits per day',
           data: counts,
+          backgroundColor: pageBgColor,
+          borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1
         }]
       },
       options: {
+        responsive: true,
         scales: {
-          y: { beginAtZero: true }
+          y: { beginAtZero: true },
+          x: { title: { display: true, text: 'Date' } }
         }
       }
     });
