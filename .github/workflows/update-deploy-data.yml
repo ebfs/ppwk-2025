@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - '_data/daily-deployments.json'  # prevents infinite loop from JSON update
+      - 'assets/daily-deployments.json'  # prevents infinite loop from JSON update
   workflow_dispatch:  # optional manual run
 
 jobs:
@@ -21,15 +21,15 @@ jobs:
       # Generate JSON of commits per day
       - name: Generate JSON of commits per day
         run: |
-          mkdir -p _data
-          echo "[" > _data/daily-deployments.json
+          mkdir -p assets
+          echo "[" > assets/daily-deployments.json
           git log --date=short --pretty="%ad" \
             | sort \
             | uniq -c \
             | awk '{printf "  { \"date\": \"%s\", \"count\": %s },\n", $2, $1}' \
-            >> _data/daily-deployments.json
-          sed -i '$ s/,$//' _data/daily-deployments.json
-          echo "]" >> _data/daily-deployments.json
+            >> assets/daily-deployments.json
+          sed -i '$ s/,$//' assets/daily-deployments.json
+          echo "]" >> assets/daily-deployments.json
 
       # Commit changes if the JSON updated
       - name: Commit changes
@@ -37,7 +37,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions"
             git config user.email "github-actions@github.com"
-            git add _data/daily-deployments.json
+            git add assets/daily-deployments.json
             git commit -m "[AUTO] update daily deployment stats"
             git push
           fi

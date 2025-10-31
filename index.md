@@ -23,7 +23,7 @@ subtitle: "ebfs"
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-fetch('{{ site.baseurl }}/_data/daily-deployments.json')
+fetch('{{ site.baseurl }}/assets/daily-deployments.json')
   .then(r => r.json())
   .then(data => {
     const labels = data.map(d => d.date);
