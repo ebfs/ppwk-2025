@@ -18,7 +18,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Viikko 3",
-        "excerpt":"Vite + React App   Vite-sovellus React-sovellus  ","categories": [],
+        "excerpt":"Vite + React App Vite-sovellus React-sovellus # Ohjeet (Windows): Jos ei ole node.js PATH:issä: lataa https://nodejs.org/en Testaa että node ja npm ovat oikein asennettu (esim cmd): C:\\Users\\ebfs&gt;node -v v24.11.0 C:\\Users\\ebfs&gt;npm -v 11.6.1 Hox! PowerShell voi estää npm.ps1-skriptin ajon suojakäytännön vuoksi (Execution Policy). PowerShellin suorituskäytäntöä (Execution Policy) muuttava komento: Set-ExecutionPolicy -Scope...","categories": [],
         "tags": [],
         "url": "/ppwk-2025/vko3/",
         "teaser": null

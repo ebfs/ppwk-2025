@@ -30,7 +30,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-10-31T16:28:13+00:00">
+  <meta property="article:published_time" content="2025-11-01T23:52:48+00:00">
 
 
 
@@ -166,7 +166,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Viikko 3">
     <meta itemprop="description" content="Vite + React App">
-    <meta itemprop="datePublished" content="2025-10-31T16:28:13+00:00">
+    <meta itemprop="datePublished" content="2025-11-01T23:52:48+00:00">
     
 
     <div class="page__inner-wrap">
@@ -189,6 +189,58 @@
 <p><a href="https://vitejs.dev/guide/">Vite-sovellus</a>
 <a href="https://create-react-app.dev/docs/getting-started">React-sovellus</a></p>
 
+<h1 id="-ohjeet-windows"># Ohjeet (Windows):</h1>
+
+<p>Jos ei ole node.js PATH:issä: lataa https://nodejs.org/en</p>
+
+<p>Testaa että node ja npm ovat oikein asennettu (esim cmd):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\ebfs&gt;node -v
+v24.11.0
+
+C:\Users\ebfs&gt;npm -v
+11.6.1
+</code></pre></div></div>
+
+<p>Hox! PowerShell voi estää npm.ps1-skriptin ajon suojakäytännön vuoksi (Execution Policy).</p>
+
+<p>PowerShellin suorituskäytäntöä (Execution Policy) muuttava komento:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned</code></p>
+
+<p>Tämä komento sallii vain omalle käyttäjälle (ei koko koneelle), että paikallisesti luotuja .ps1-skriptejä voi suorittaa, ja estää internetistä ladattujen skriptien ajon, jos niitä ei ole allekirjoitettu (eli varmistettu turvallisiksi).</p>
+
+<p>Yksinkertaistettuna komento antaa sinun ajaa omia PowerShell-skriptejä, mutta ei avaa porttia kaikille haitallisille skripteille.</p>
+
+<p>Ja jatkuu:</p>
+
+<p>VSCode terminal: <code class="language-plaintext highlighter-rouge">react-deploy % npm create vite@latest</code></p>
+
+<p>Lisää project name, omaa projektia varten käytän <code class="language-plaintext highlighter-rouge">ppwk-2025-vite</code></p>
+
+<p>Avaa projektin kansio VSCodessa</p>
+
+<p><code class="language-plaintext highlighter-rouge">vite.config.js</code> tiedostossa lisää seuraavat rivit:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="nf">defineConfig</span><span class="p">({</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nf">react</span><span class="p">()],</span>
+  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/ppwk-2025/react-app</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">server</span><span class="p">:</span> <span class="p">{</span>            <span class="c1">//tämä</span>
+    <span class="na">open</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>        <span class="c1">//tämä</span>
+    <span class="na">port</span><span class="p">:</span> <span class="mi">5173</span>         <span class="c1">//ei ole pakko olla 5173, tämä on vain esimerkki, voi olla esim 3001</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><a href="https://www.npmjs.com/package/gh-pages">Tältä sivulta</a> löytyy tarvittava npm-paketti saada projekti toimimaan GitHub Pages:in kanssa.</p>
+
+<p>Kun paketti on asennettu, <code class="language-plaintext highlighter-rouge">npm run build</code>, tämä luo optimoidun version sovelluksesta tuotantoon mikä löytyy dist kansiosta.</p>
+
+<p>“scripts”: {
+  “deploy”: “gh-pages -d dist”
+}</p>
+
+
         
       </section>
 
@@ -199,7 +251,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Päivitetty:</strong> <time class="dt-published" datetime="2025-10-31T16:28:13+00:00">October 31, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Päivitetty:</strong> <time class="dt-published" datetime="2025-11-01T23:52:48+00:00">November 1, 2025</time></p>
 
       </footer>
 
