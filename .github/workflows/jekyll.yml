@@ -32,3 +32,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }} #bot needs readwrite privilege to work, check box in settings
           publish_dir: ./_site
           publish_branch: gh-pages #target branch, nimi voi olla käytännössä mikä tahansa
+          keep_files: true

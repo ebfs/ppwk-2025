@@ -38,3 +38,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./app/dist
           destination_dir: app
+          keep_files: true
