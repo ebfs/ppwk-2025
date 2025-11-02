@@ -106,20 +106,30 @@
   color: #000; /* text inside inputs */
 }
 
-/* Buttons */
-.login-container button {
+/* Button container: side by side */
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;       /* space between buttons */
+  flex-wrap: wrap;  /* wrap if screen too narrow */
+}
+
+/* Buttons styling */
+.login-buttons button {
+  flex: 1 1 auto;          /* allow buttons to grow/shrink */
+  min-width: 120px;        /* keep readable on mobile */
   margin: 0.5rem 0.25rem;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border: none;
   border-radius: 0.25rem;
-  background-color: #386c46; /* new dark color */
+  background-color: #386c46; /* green for logo match */
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.login-container button:hover {
+.login-buttons button:hover {
   background-color: #488a5a; /* slightly lighter on hover */
 }
 
