@@ -1,25 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { auth } from "../firebase";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged
+  signOut
 } from "firebase/auth";
+import { useAuth } from "./AuthContext.jsx"; // use global auth context
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
   const [error, setError] = useState("");
-
-  // Listen for auth state changes
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, []);
+  const { user } = useAuth(); // get user from context
 
   const handleSignup = async () => {
     setError("");
@@ -59,7 +51,6 @@ export default function Login() {
 
   return (
     <div className="login-container">
-      {/* Render error message in component */}
       {error && <div className="login-error">{error}</div>}
 
       <input
