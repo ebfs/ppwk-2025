@@ -192,3 +192,72 @@ header {
   font-weight: bold;
   text-align: center;
 }
+
+.create-event-form input,
+.create-event-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.create-event-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.create-event-form button {
+  background-color: #386c46; /* match login buttons */
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-event-form button:hover {
+  background-color: #488a5a;
+}
+
+/* CreateEvent: title + date row */
+.title-date-row {
+  display: flex;
+  gap: 1rem; /* space between title and date */
+  margin-bottom: 1rem;
+}
+
+.title-date-row input {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  font-family: inherit; /* ensure same font as rest of form */
+}
+
+.date-input {
+  max-width: 220px; /* keeps the date picker compact */
+}
+
+/* Description textarea */
+.description-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit; /* match title/date font */
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Optional: add slight highlight to calendar icon */
+.date-input::-webkit-calendar-picker-indicator {
+  filter: brightness(1) contrast(1.2);
+  }
