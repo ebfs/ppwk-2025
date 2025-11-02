@@ -11,9 +11,23 @@ export default function CreateEvent() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  // Function to get current datetime in YYYY-MM-DDTHH:MM format
+  // Round up current time to next 15-min interval
   const getCurrentDateTime = () => {
     const now = new Date();
+    now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15);
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    return `${year}-${month}-${day}T${hours}:${minutes}`;
+  };
+
+  // Max datetime = 1 year from now, rounded to nearest 15-min
+  const getMaxDateTime = () => {
+    const now = new Date();
+    now.setFullYear(now.getFullYear() + 1);
+    now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15);
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, "0");
     const day = String(now.getDate()).padStart(2, "0");
@@ -75,10 +89,10 @@ export default function CreateEvent() {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             required
-            min={getCurrentDateTime()} // dynamic min = current datetime
-            max="2100-12-31T23:45"
-            step={900} // 15-minute intervals (900 seconds)
-            onKeyDown={(e) => e.preventDefault()} // block typing
+            min={getCurrentDateTime()}
+            max={getMaxDateTime()}
+            step={900} // 15-minute intervals
+            onKeyDown={(e) => e.preventDefault()} // block manual typing
             className="date-input"
           />
         </div>
