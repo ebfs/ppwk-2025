@@ -26,7 +26,7 @@
 
 /* Add hover effect for your social butterfly logo too */
 .logo.social:hover {
-  filter: drop-shadow(0 0 2em #ff8c00aa); /* Customize color if you want */
+  filter: drop-shadow(0 0 2em #ffffffaa); /* Customize color if you want */
 }
 
 /* Logo spin animation */
@@ -64,4 +64,14 @@
 .logo.social {
   width: 300px; /* or whatever size you want */
   height: auto;
+}
+
+.login-container {
+  margin-top: 6rem; /* space between heading and login */
+}
+/* Smaller screens */
+@media (max-width: 768px) {
+  .login-container {
+    margin-top: 2rem; /* less space on tablets/phones */
+  }
 }
