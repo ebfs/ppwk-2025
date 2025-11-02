@@ -15,8 +15,9 @@ function App() {
       <h1>Social Butterfly</h1>
 
       {/* Login component for Firebase Authentication */}
+      <div className="login-container">
       <Login />
-
+      </div>
     </>
   );
 }
