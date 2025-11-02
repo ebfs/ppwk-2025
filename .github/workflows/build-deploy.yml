@@ -1,0 +1,65 @@
+name: Build and Deploy Jekyll + Vite to GitHub Pages
+# This combined jekyll + app workflow is on standby for the time being until changing over, manual trigger for now
+# Manual trigger only
+on:
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ------------------------
+      # Build Jekyll site
+      # ------------------------
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+          bundler-cache: true
+
+      - name: Install Jekyll dependencies
+        run: bundle install
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --destination ./_site
+
+      # ------------------------
+      # Build Vite app
+      # ------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Vite dependencies
+        working-directory: ./app
+        run: npm install
+
+      - name: Build Vite project
+        working-directory: ./app
+        run: npm run build
+
+      # ------------------------
+      # Deploy both to gh-pages
+      # ------------------------
+      - name: Deploy Jekyll to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          keep_files: true
+
+      - name: Deploy Vite app to /app
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./app/dist
+          destination_dir: app
+          keep_files: true
