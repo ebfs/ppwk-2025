@@ -23,14 +23,31 @@ export default function EventFeed() {
       <h2>Upcoming Events</h2>
       {events.length === 0 && <p>No events yet</p>}
       <div className="event-list">
-        {events.map(event => (
-          <div key={event.id} className="event-card">
-            <h3>{event.title}</h3>
-            <p>{event.description}</p>
-            <p>{event.date ? new Date(event.date.seconds * 1000).toLocaleString() : ""}</p>
-            {/* Link to Event Detail page will go here later */}
-          </div>
-        ))}
+        {events.map(event => {
+          // Convert Firestore timestamp to JS Date
+          const eventDate = event.date ? new Date(event.date.seconds * 1000) : null;
+
+          // Format date without seconds
+          const formattedDate = eventDate
+            ? eventDate.toLocaleString(undefined, {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit", // no seconds
+                hour12: true,      // optional: show AM/PM
+              })
+            : "";
+
+          return (
+            <div key={event.id} className="event-card">
+              <h3>{event.title}</h3>
+              <p>{event.description}</p>
+              <p>{formattedDate}</p>
+              {/* Link to Event Detail page will go here later */}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
