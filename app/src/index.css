@@ -22,28 +22,27 @@ a:hover {
   color: #535bf2;
 }
 
+/* ✅ FIXED: Removed flex + place-items */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;
 }
 
-/* Mobile-friendly adjustments */
+/* 📱 Mobile-friendly body spacing */
 @media (max-width: 480px) {
   body {
-    display: block;      /* avoid unwanted centering */
-    padding: 1rem;       /* add spacing on small screens */
+    padding: 1rem;
   }
 }
 
-/* Center and limit the app container */
+/* ✅ Center the app without forcing weird zoom */
 #root {
-  width: 100%;       /* fit screen width */
-  max-width: 1280px; /* cap width for desktops */
-  margin: 0 auto;    /* center horizontally */
-  padding: 2rem;
+  width: 100%;
+  max-width: 600px;   /* Controls how wide the app appears */
+  margin: 0 auto;
+  padding: 1rem;
   text-align: center;
 }
 
