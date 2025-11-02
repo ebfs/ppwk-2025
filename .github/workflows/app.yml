@@ -1,0 +1,40 @@
+name: Deploy Vite App to GitHub Pages (subfolder)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the source code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # Install dependencies
+      - name: Install dependencies
+        working-directory: ./app
+        run: npm install
+
+      # Build Vite project
+      - name: Build project
+        working-directory: ./app
+        run: npm run build
+
+      # Deploy only the /app folder into gh-pages
+      - name: Deploy to GitHub Pages (subfolder)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./app/dist
+          destination_dir: app
