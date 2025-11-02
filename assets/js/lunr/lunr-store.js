@@ -1,6 +1,6 @@
 var store = [{
         "title": "Harjoitustyö",
-        "excerpt":" ","categories": [],
+        "excerpt":"Community Event Hub Tavoite: Käyttäjät voivat luoda tapahtumia, ja muut käyttäjät voivat olla vuorovaikutuksessa niiden kanssa ilmoittautumalla, liittymällä mukaan, kommentoimalla ja lisäämällä kuvia tapahtumasta. Tavoite on saada ihmiset liikkeelle ja sosialisoimaan. Ominaisuudet: Tapahtuman luominen Otsikko, kuvaus, päivämäärä/aika, sijainti (valinnainen: karttapinni). Mahdollisesti tunnisteet tai kategoriat (esim. “Musiikki”, “Urheilu”, “Meetup”). Tapahtumasyöte /...","categories": [],
         "tags": [],
         "url": "/ppwk-2025/harjoitustyo/",
         "teaser": null
@@ -18,7 +18,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Viikko 3",
-        "excerpt":"Vite + React App Oman sivuston appi löytyy: https://ebfs.github.io/ppwk-2025/app/ # Ohjeet (Windows): Jos ei ole node.js PATH:issä: lataa https://nodejs.org/en Testaa että node ja npm ovat oikein asennettu (esim cmd): C:\\Users\\ebfs&gt;node -v v24.11.0 C:\\Users\\ebfs&gt;npm -v 11.6.1 Hox! PowerShell voi estää npm.ps1-skriptin ajon suojakäytännön vuoksi (Execution Policy). PowerShellin suorituskäytäntöä (Execution Policy) muuttava...","categories": [],
+        "excerpt":"Vite + React App Oman sivuston appi löytyy täältä # Ohjeet (Windows): Jos ei ole node.js PATH:issä: lataa https://nodejs.org/en Testaa että node ja npm ovat oikein asennettu (esim cmd): C:\\Users\\ebfs&gt;node -v v24.11.0 C:\\Users\\ebfs&gt;npm -v 11.6.1 Hox! PowerShell voi estää npm.ps1-skriptin ajon suojakäytännön vuoksi (Execution Policy). PowerShellin suorituskäytäntöä (Execution Policy) muuttava...","categories": [],
         "tags": [],
         "url": "/ppwk-2025/vko3/",
         "teaser": null
