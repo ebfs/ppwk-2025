@@ -2,6 +2,11 @@ name: Build and Deploy Jekyll + Vite to GitHub Pages
 # This combined jekyll + app workflow is on standby for the time being until changing over, manual trigger for now
 # Manual trigger only
 on:
+  #push:
+    #branches:
+    #  - main
+    #paths-ignore:
+    #  - 'assets/daily-deployments.json'  # ignore JSON updates to prevent extra builds
   workflow_dispatch:
 
 jobs:
