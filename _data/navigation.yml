@@ -16,3 +16,5 @@ main:
     url: "/vko6/"
   - title: "Harjoitustyö"
     url: "/harjoitustyo/"
+  - title: "Verkkosovellus"
+    url: "/app/"
