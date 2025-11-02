@@ -34,7 +34,7 @@ export default function EventFeed() {
   return (
     <div className="event-feed-container">
       <h2>Upcoming Events</h2>
-      {events.length === 0 && <p>No events yet</p>}
+      {events.length === 0 && <p>Loading...</p>}
       <div className="event-list">
         {events.map(event => {
           const eventDate = event.date ? new Date(event.date.seconds * 1000) : null;
