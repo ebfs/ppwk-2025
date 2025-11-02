@@ -8,7 +8,7 @@ next: /vko4/
 
 # Vite + React App
 
-Oman sivuston appi löytyy: https://ebfs.github.io/ppwk-2025/app/
+**Oman sivuston appi löytyy [täältä](https://ebfs.github.io/ppwk-2025/app/)**
 
 # # Ohjeet (Windows):
 
