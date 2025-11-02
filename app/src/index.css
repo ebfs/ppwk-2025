@@ -5,7 +5,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /*background-color: #242424; original backgr*/
   background-color: #252a34;
 
   font-synthesis: none;
@@ -29,6 +28,23 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 480px) {
+  body {
+    display: block;      /* avoid unwanted centering */
+    padding: 1rem;       /* add spacing on small screens */
+  }
+}
+
+/* Center and limit the app container */
+#root {
+  width: 100%;       /* fit screen width */
+  max-width: 1280px; /* cap width for desktops */
+  margin: 0 auto;    /* center horizontally */
+  padding: 2rem;
+  text-align: center;
 }
 
 h1 {
