@@ -18,8 +18,8 @@ export default function EventFeed() {
       const now = new Date();
       const q = query(
         collection(db, "events"),
-        where("date", ">=", now),
-        orderBy("date", "asc")
+        where("datetime", ">=", now), // FIXED: use 'datetime'
+        orderBy("datetime", "asc")   // FIXED: order by 'datetime'
       );
 
       const querySnapshot = await getDocs(q);
@@ -54,7 +54,7 @@ export default function EventFeed() {
     if (dateFilter) {
       const selected = new Date(dateFilter);
       tempEvents = tempEvents.filter(e => {
-        const eventDate = e.date ? new Date(e.date.seconds * 1000) : null;
+        const eventDate = e.datetime ? new Date(e.datetime.seconds * 1000) : null; // FIXED
         return eventDate
           ? eventDate.toDateString() === selected.toDateString()
           : false;
@@ -160,7 +160,7 @@ export default function EventFeed() {
 
       <div className="event-list">
         {filteredEvents.map(event => {
-          const eventDate = event.date ? new Date(event.date.seconds * 1000) : null;
+          const eventDate = event.datetime ? new Date(event.datetime.seconds * 1000) : null; // FIXED
           const formattedDate = eventDate
             ? eventDate.toLocaleString(undefined, {
                 year: "numeric",
