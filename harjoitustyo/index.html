@@ -30,7 +30,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-11-03T00:16:04+00:00">
+  <meta property="article:published_time" content="2025-11-03T09:38:50+00:00">
 
 
 
@@ -203,6 +203,154 @@
   <li>Käyttäjät voivat muokata omia julkaisujaan ja kommenttejaan.</li>
 </ul>
 
+<h2 id="roadmap">Roadmap:</h2>
+
+<h3 id="tehty">Tehty:</h3>
+
+<ul>
+  <li>
+    <p>React-sovellus rakennettu Vite:llä.</p>
+  </li>
+  <li>
+    <p>ProtectedRoute-komponentti käytössä rajoittamaan pääsyä Luo tapahtuma -sivulle.</p>
+  </li>
+  <li>
+    <p>Navigaatiopainikkeet tyylitelty yhtenevästi kirjautumispainikkeiden kanssa</p>
+  </li>
+  <li>
+    <p>Firebase/Firestore</p>
+  </li>
+  <li>
+    <p>Reititys täysin toiminnassa, sisältäen tapahtumasyötteen, Luo tapahtuma- ja Kirjaudu-sivut.</p>
+  </li>
+  <li>
+    <p>Responsiivinen layout mobiilille (max-width: 600px rootissa app.css:ssä, flex-wrap nav-painikkeille ja otsikko/päivämäärä-riville).</p>
+  </li>
+  <li>
+    <p>Otsikot, painikkeet ja typografia yhteneväisiä.</p>
+  </li>
+  <li>
+    <p>Luo tapahtuma lomake</p>
+  </li>
+  <li>
+    <p>Pääsiäismuna</p>
+  </li>
+</ul>
+
+<h3 id="known-issues">Known issues:</h3>
+
+<ul>
+  <li>Aikavalitsimen tyylittely: tunti- ja minuuttikentät korkeampia kuin päivämääräkenttä ja hieman vinossa;</li>
+</ul>
+
+<h3 id="työn-alla">Työn alla:</h3>
+
+<h4 id="tehtävät">Tehtävät:</h4>
+
+<ul>
+  <li>
+    <p>Luo tapahtumasivu</p>
+  </li>
+  <li>
+    <p>Lomake on jo olemassa (otsikko, kuvaus, päivämäärä/aika, kategoria (puuttuu), valinnainen sijainti (puuttuu)).</p>
+  </li>
+  <li>
+    <p>Tallenna tiedot Firestoreen events-kokoelmaan.</p>
+  </li>
+</ul>
+
+<h4 id="tapahtumasyöte">Tapahtumasyöte</h4>
+
+<ul>
+  <li>
+    <p>Hae tapahtumat Firestoresta (done).</p>
+  </li>
+  <li>
+    <p>Näytä lista- tai korttinäkymänä.</p>
+  </li>
+  <li>
+    <p>Sisällytä valinnainen suodatus/haun toiminto (kategorian, päivämäärän, sijainnin mukaan).</p>
+  </li>
+</ul>
+
+<h4 id="tapahtuman-yksityiskohdat">Tapahtuman yksityiskohdat</h4>
+
+<ul>
+  <li>
+    <p>Hae yksittäinen tapahtuma ID:n perusteella.</p>
+  </li>
+  <li>
+    <p>Näytä kaikki tiedot: kuvaus, päivämäärä/aika, luojan tiedot.</p>
+  </li>
+  <li>
+    <p>Kommentit ja kuvat lisätään myöhemmin.</p>
+  </li>
+  <li>
+    <p>Tulos: Käyttäjät voivat lisätä ja katsella tapahtumia.</p>
+  </li>
+</ul>
+
+<h4 id="kommentit">Kommentit</h4>
+
+<ul>
+  <li>
+    <p>Kommentit</p>
+  </li>
+  <li>
+    <p>Alikokoelma jokaisen tapahtuman alle.</p>
+  </li>
+  <li>
+    <p>Vain kirjautuneet käyttäjät voivat kommentoida.</p>
+  </li>
+  <li>
+    <p>Näytä kommentit tapahtuman yksityiskohtasivulla.</p>
+  </li>
+</ul>
+
+<h4 id="kuvat">Kuvat</h4>
+
+<ul>
+  <li>
+    <p>Latauspainike → Firebase Storage.</p>
+  </li>
+  <li>
+    <p>Tallenna lataus-URL Firestoreen images-alikokoelmaan.</p>
+  </li>
+  <li>
+    <p>Näytä kuvat tapahtuman yksityiskohtasivulla.</p>
+  </li>
+  <li>
+    <p>Tulos: Jokaisella tapahtumalla voi olla kommentteja ja kuvia.</p>
+  </li>
+</ul>
+
+<h4 id="valinnainen-sijaintikarttaintegraatio">Valinnainen sijainti/karttaintegraatio</h4>
+
+<ul>
+  <li>
+    <p>Käytä Google Mapsia / OpenStreetMapia (esim. react-leaflet).</p>
+  </li>
+  <li>
+    <p>Mahdollista sijainnin valinta tapahtumaa luotaessa.</p>
+  </li>
+  <li>
+    <p>Näytä sijainti tapahtuman yksityiskohtasivulla.</p>
+  </li>
+</ul>
+
+<h4 id="esteettömyys--käyttökokemus">Esteettömyys &amp; käyttökokemus</h4>
+
+<ul>
+  <li>
+    <p>Alt-teksti kuville.</p>
+  </li>
+  <li>
+    <p>ARIA-labelit painikkeille/lomakkeille.</p>
+  </li>
+  <li>
+    <p>Näppäimistönavigointi.</p>
+  </li>
+</ul>
 
 
 <h3 class="archive__subtitle">Viimeisimmät kirjoitukset</h3>

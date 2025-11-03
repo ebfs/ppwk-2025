@@ -49,6 +49,8 @@ header {
   filter: drop-shadow(0 0 2em #ffffffaa);
 }
 
+/*-----------------------------------------------------------------*/
+
 /* NAVIGATION */
 .nav-bar {
   margin: 20px 0;
@@ -79,11 +81,15 @@ header {
   background-color: #488a5a;
 }
 
+/*-----------------------------------------------------------------*/
+
 /* Universal placeholder color for all inputs & textareas */
 ::placeholder {
   color: #757575;
   opacity: 1; /* keeps color consistent across browsers */
 }
+
+/*-----------------------------------------------------------------*/
 
 /* EASTER EGG OVERLAY */
 .easter-egg-overlay {
@@ -114,6 +120,7 @@ header {
   100% { opacity: 0; }
 }
 
+/*-----------------------------------------------------------------*/
 /* SMALL SCREENS FIX */
 @media (max-width: 480px) {
   #root {
@@ -129,6 +136,8 @@ header {
     padding: 0.6rem 1rem;
   }
 }
+
+/*-----------------------------------------------------------------*/
 
 .login-container {
   margin-top: 0rem;
@@ -194,6 +203,8 @@ header {
   text-align: center;
 }
 
+/*-----------------------------------------------------------------*/
+
 .create-event-form input,
 .create-event-form textarea {
   width: 100%;
@@ -225,25 +236,47 @@ header {
   background-color: #488a5a;
 }
 
-/* CreateEvent: title + date row */
+/*-----------------------------------------------------------------*/
+
+/* CreateEvent: title + date/time row */
 .title-date-row {
   display: flex;
-  gap: 1rem; /* space between title and date */
+  gap: 1rem;        /* space between inputs */
   margin-bottom: 1rem;
+  flex-wrap: wrap;   /* wrap on mobile */
 }
 
-.title-date-row input {
-  flex: 1;
-  padding: 0.75rem;
+/* Normalize time picker (hour + minute) */
+.title-date-row input[type="time"],
+.time-input {
+  width: 220px;           /* match date picker width */
+  max-width: 100%;        /* responsive on mobile */
+  height: 2.5rem;         /* same visual height as text inputs */
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
   border-radius: 0.25rem;
   border: 1px solid #ccc;
-  font-size: 1rem;
-  box-sizing: border-box;
-  font-family: inherit; /* ensure same font as rest of form */
+  background-color: #3b3b3b; /* dark input background */
+  color: #fff;
+  box-sizing: border-box;     /* include padding/border in size */
 }
 
+/* Time pickers (hours/minutes) */
+.time-input {
+  max-width: 100px;          /* match width with date compact style */
+  background-color: #3b3b3b;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Date picker */
 .date-input {
-  max-width: 220px; /* keeps the date picker compact */
+  max-width: 220px; /* keeps date picker compact */
 }
 
 /* Description textarea */
@@ -253,9 +286,27 @@ header {
   border-radius: 0.25rem;
   border: 1px solid #ccc;
   font-size: 1rem;
-  font-family: inherit; /* match title/date font */
+  font-family: inherit;
+  background-color: #3b3b3b; /* normalized dark background */
+  color: #fff;               /* white text */
   resize: vertical;
   min-height: 100px;
+}
+
+/* Create button */
+.create-event-form button {
+  background-color: #386c46;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-event-form button:hover {
+  background-color: #488a5a;
 }
 
 /* Optional: add slight highlight to calendar icon
