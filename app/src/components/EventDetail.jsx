@@ -111,9 +111,6 @@ export default function EventDetail() {
       })
     : "Date not set";
 
-  // Determine flex direction for comment input (mobile vs desktop)
-  const isMobile = window.innerWidth < 600;
-
   return (
     <div style={{ padding: "1rem", maxWidth: "800px", margin: "0 auto" }}>
       <h2>{event.title || "Untitled Event"}</h2>
@@ -135,13 +132,7 @@ export default function EventDetail() {
             gap: "0.5rem"
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              gap: "0.5rem"
-            }}
-          >
+          <div className="comment-input-row" style={{ display: "flex", gap: "0.5rem" }}>
             <input
               type="text"
               value={newComment}
@@ -160,21 +151,20 @@ export default function EventDetail() {
             <button
               type="submit"
               onClick={handleCommentSubmit}
+              className="post-button"
               style={{
                 padding: "0.5rem 1rem",
                 backgroundColor: "#2d5735",
                 color: "#fff",
                 border: "1px solid #ccc",
                 borderRadius: "0.25rem",
-                cursor: "pointer",
-                alignSelf: isMobile ? "flex-start" : "auto",
-                marginTop: isMobile ? "0.5rem" : 0
+                cursor: "pointer"
               }}
             >
               Post
             </button>
           </div>
-          <div style={{ textAlign: "right", color: "#fff" }}>
+          <div className="char-counter" style={{ textAlign: "right", color: "#fff" }}>
             {256 - newComment.length} characters remaining
           </div>
         </div>
@@ -249,6 +239,23 @@ export default function EventDetail() {
           })}
         </ul>
       </div>
+
+      {/* Mobile-specific style */}
+      <style>
+        {`
+          @media (max-width: 600px) {
+            .comment-input-row {
+              flex-direction: column;
+            }
+            .post-button {
+              align-self: flex-start;
+            }
+            .char-counter {
+              text-align: right;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
