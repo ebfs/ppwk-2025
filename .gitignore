@@ -25,3 +25,6 @@ dist-ssr
 
 # Vite environment variables
 .env.local
+
+# Legacy code repository
+legacy
