@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // <-- added
 import { db } from "./../firebase";
 import { collection, getDocs, query, orderBy, where } from "firebase/firestore";
 import "../styles/EventCard.css";
@@ -18,8 +19,8 @@ export default function EventFeed() {
       const now = new Date();
       const q = query(
         collection(db, "events"),
-        where("datetime", ">=", now), // FIXED: use 'datetime'
-        orderBy("datetime", "asc")   // FIXED: order by 'datetime'
+        where("datetime", ">=", now), // use 'datetime'
+        orderBy("datetime", "asc")
       );
 
       const querySnapshot = await getDocs(q);
@@ -54,7 +55,7 @@ export default function EventFeed() {
     if (dateFilter) {
       const selected = new Date(dateFilter);
       tempEvents = tempEvents.filter(e => {
-        const eventDate = e.datetime ? new Date(e.datetime.seconds * 1000) : null; // FIXED
+        const eventDate = e.datetime ? new Date(e.datetime.seconds * 1000) : null;
         return eventDate
           ? eventDate.toDateString() === selected.toDateString()
           : false;
@@ -160,7 +161,7 @@ export default function EventFeed() {
 
       <div className="event-list">
         {filteredEvents.map(event => {
-          const eventDate = event.datetime ? new Date(event.datetime.seconds * 1000) : null; // FIXED
+          const eventDate = event.datetime ? new Date(event.datetime.seconds * 1000) : null;
           const formattedDate = eventDate
             ? eventDate.toLocaleString(undefined, {
                 year: "numeric",
@@ -173,13 +174,19 @@ export default function EventFeed() {
             : "";
 
           return (
-            <div key={event.id} className="event-card">
-              <div className="event-card-header">
-                <h3 className="event-title">{event.title}</h3>
-                <span className="event-date">{formattedDate}</span>
+            <Link
+                to={`/event/${event.id}`}
+                key={event.id}
+                style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <div className="event-card">
+                <div className="event-card-header">
+                  <h3 className="event-title">{event.title}</h3>
+                  <span className="event-date">{formattedDate}</span>
+                </div>
+                <p className="event-description">{event.description}</p>
               </div>
-              <p className="event-description">{event.description}</p>
-            </div>
+            </Link>
           );
         })}
       </div>

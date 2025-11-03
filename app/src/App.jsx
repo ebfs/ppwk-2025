@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from './components/Login';
 import EventFeed from './components/EventFeed';
+import EventDetail from './components/EventDetail'; // <-- import EventDetail
 import CreateEvent from './components/CreateEvent';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import socialButterfly from './assets/socialButterfly.png';
@@ -17,7 +18,7 @@ function App() {
     if (clickCount + 1 >= 50) {
       setShowEasterEgg(true);
       setClickCount(0);
-      setTimeout(() => setShowEasterEgg(false), 1500); // fade out after 1.5s
+      setTimeout(() => setShowEasterEgg(false), 1500);
     }
   };
 
@@ -53,6 +54,9 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
+
+          {/* NEW: Event Detail Route */}
+          <Route path="/event/:id" element={<EventDetail />} />
         </Routes>
       </main>
 
