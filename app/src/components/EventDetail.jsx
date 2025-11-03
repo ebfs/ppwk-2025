@@ -111,6 +111,9 @@ export default function EventDetail() {
       })
     : "Date not set";
 
+  // Determine flex direction for comment input (mobile vs desktop)
+  const isMobile = window.innerWidth < 600;
+
   return (
     <div style={{ padding: "1rem", maxWidth: "800px", margin: "0 auto" }}>
       <h2>{event.title || "Untitled Event"}</h2>
@@ -132,7 +135,13 @@ export default function EventDetail() {
             gap: "0.5rem"
           }}
         >
-          <div style={{ display: "flex", gap: "0.5rem" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              gap: "0.5rem"
+            }}
+          >
             <input
               type="text"
               value={newComment}
@@ -157,7 +166,9 @@ export default function EventDetail() {
                 color: "#fff",
                 border: "1px solid #ccc",
                 borderRadius: "0.25rem",
-                cursor: "pointer"
+                cursor: "pointer",
+                alignSelf: isMobile ? "flex-start" : "auto",
+                marginTop: isMobile ? "0.5rem" : 0
               }}
             >
               Post
