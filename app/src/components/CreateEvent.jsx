@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { db } from "../firebase"; // your firebase config
+import { db, auth } from "../firebase"; // make sure auth is imported
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 function CreateEvent() {
@@ -25,12 +25,20 @@ function CreateEvent() {
     const [year, month, day] = date.split("-").map(Number);
     const eventDate = new Date(year, month - 1, day, Number(hour), Number(minute));
 
+    // Get current user
+    const user = auth.currentUser;
+    if (!user) {
+      setError("You must be logged in to create an event.");
+      return;
+    }
+
     try {
       await addDoc(collection(db, "events"), {
         title,
         description,
         datetime: Timestamp.fromDate(eventDate),
         createdAt: Timestamp.now(),
+        createdBy: user.uid,  // <-- Add the user ID here
       });
       navigate("/"); // go back to feed
     } catch (err) {
@@ -61,7 +69,6 @@ function CreateEvent() {
           onChange={(e) => setDate(e.target.value)}
           required
         />
-
         <select value={hour} onChange={(e) => setHour(e.target.value)}>
           {Array.from({ length: 24 }, (_, i) => (
             <option key={i} value={i.toString().padStart(2, "0")}>
@@ -69,7 +76,6 @@ function CreateEvent() {
             </option>
           ))}
         </select>
-
         <select value={minute} onChange={(e) => setMinute(e.target.value)}>
           {[0, 15, 30, 45].map((m) => (
             <option key={m} value={m.toString().padStart(2, "0")}>
