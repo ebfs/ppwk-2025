@@ -164,7 +164,7 @@ export default function EventDetail() {
               Post
             </button>
           </div>
-          <div className="char-counter" style={{ textAlign: "right", color: "#fff" }}>
+          <div className="char-counter" style={{ color: "#fff", fontSize: "0.8rem" }}>
             {256 - newComment.length} characters remaining
           </div>
         </div>
@@ -240,22 +240,26 @@ export default function EventDetail() {
         </ul>
       </div>
 
-      {/* Mobile-specific style */}
-      <style>
+        <style>
         {`
-          @media (max-width: 600px) {
-            .comment-input-row {
-              flex-direction: column;
-            }
-            .post-button {
-              align-self: flex-start;
-            }
             .char-counter {
-              text-align: right;
+              text-align: right; /* Desktop default */
+              font-size: 0.8rem;
             }
-          }
-        `}
-      </style>
+
+            @media (max-width: 600px) {
+              .comment-input-row {
+                flex-direction: column;
+              }
+              .post-button {
+                align-self: flex-start;
+              }
+              .char-counter {
+                text-align: left; /* Override for mobile */
+              }
+            }
+          `}
+        </style>
     </div>
   );
 }
