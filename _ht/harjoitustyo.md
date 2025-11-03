@@ -51,7 +51,7 @@ Käyttäjät voivat luoda tapahtumia, ja muut käyttäjät voivat olla vuorovaik
 
 ### Known issues:
 
-- Aikavalitsimen tyylittely: tunti- ja minuuttikentät korkeampia kuin päivämääräkenttä ja hieman vinossa;
+- Aikavalitsimen tyylittely: tunti- ja minuuttikentät korkeampia kuin päivämääräkenttä. Samoin Samsung Android -> minuuttikenttä on päivämäärä- ja tuntikentän alla.
 
 ### Työn alla:
 
