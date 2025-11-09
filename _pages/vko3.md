@@ -36,7 +36,7 @@ Yksinkertaistettuna komento antaa sinun ajaa omia PowerShell-skriptejä, mutta e
 
 Ja jatkuu:
 
-VSCode terminal: `react-deploy % npm create vite@latest`
+VSCode terminal: `npm create vite@latest`
 
 Lisää project name, omaa projektia varten käytän `ppwk-2025-vite`
 
