@@ -81,6 +81,14 @@ Mobiililla on parannettavaa:
 - Kuvien filetyypin muuttaminen png -> webp, avif vähentää ladattavan tiedon määrää.
 - Caching myös vähentäisi ladattavan tiedon määrää.
 
+
+-----------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------
+
+
 # Community Event Hub (Vanha julkaisu)
 
 ## Tavoite:
