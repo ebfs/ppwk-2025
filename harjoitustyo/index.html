@@ -30,7 +30,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-12-14T18:51:27+00:00">
+  <meta property="article:published_time" content="2025-12-14T18:53:34+00:00">
 
 
 
@@ -231,18 +231,24 @@
 <h2 id="latautumisaika">Latautumisaika:</h2>
 
 <h4 id="desktop">Desktop:</h4>
-<p><img src="./.performance-desktop.png" alt="Desktop Performance" /></p>
+<p><img src="./performance-desktop.png" alt="Desktop Performance" /></p>
 
 <p>Pöytäkoneella kaikki sujuu erittäin hyvin.</p>
 
 <h4 id="mobile">Mobile:</h4>
-<p><img src="./.performance-mobile.png" alt="Mobile Performance" /></p>
+<p><img src="./performance-mobile.png" alt="Mobile Performance" /></p>
 
-<p>Mobiililla on parannettavaa:
-<code class="language-plaintext highlighter-rouge">Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored</code></p>
+<p>Mobiililla on parannettavaa:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored</code></p>
+
 <ul>
-  <li>Tämän korjaaminen nopeuttaisi sivun lataamisaikaa.
-<code class="language-plaintext highlighter-rouge">Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimising image size</code></li>
+  <li>Tämän korjaaminen nopeuttaisi sivun lataamisaikaa.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimising image size</code></p>
+
+<ul>
   <li>Kuvien filetyypin muuttaminen png -&gt; webp, avif vähentää ladattavan tiedon määrää.</li>
   <li>Caching myös vähentäisi ladattavan tiedon määrää.</li>
 </ul>
