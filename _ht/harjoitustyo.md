@@ -6,6 +6,8 @@ permalink: /harjoitustyo/
 
 # Social Butterfly
 
+Apin löydät [täältä](https://ebfs.github.io/ppwk-2025/app/)
+
 ## arvioinnissa käytetyt kriteerit:
 - idea = jokin käytännöllinen sivusto, jossa on hyödyllistä tietoa
 - sisältö = sivustolla on toimintoja, joilla voidaan tietoa tutkia
@@ -81,6 +83,7 @@ Mobiililla on parannettavaa:
 - Kuvien filetyypin muuttaminen png -> webp, avif vähentää ladattavan tiedon määrää.
 - Caching myös vähentäisi ladattavan tiedon määrää.
 
+Apin löydät [täältä](https://ebfs.github.io/ppwk-2025/app/)
 
 -----------------------------------------------------------------------------------
 
