@@ -3,7 +3,81 @@ layout: home
 title: "Harjoitustyö"
 permalink: /harjoitustyo/
 ---
-# Community Event Hub
+
+# Social Butterfly
+
+## arvioinnissa käytetyt kriteerit:
+- idea = jokin käytännöllinen sivusto, jossa on hyödyllistä tietoa
+- sisältö = sivustolla on toimintoja, joilla voidaan tietoa tutkia
+- visuaalisuus ja selkeys = Nielsen heuristiikkojen mukainen käytettävyys
+- sivuilla on samanlainen navigointi ja ulkoasu, joka täyttää WCAG eli Web Content Accessibility Guidelines -ohjeistuksen
+- responsiivisuus = toimivuus eri kokoisilla päätelaitteilla (testaa ja tee lyhyt raportti)
+- autentikoinnin (Firebase), tietokannan (Firestore) ja kolmannen osapuolien palveluiden (esimerkiksi REST-rajapinnan yli) käyttö
+- toimivuus uusimmilla selaimilla (testaa ja tee lyhyt raportti)
+- sivujen latautumisaika kohtuullinen (testaa ja tee lyhyt raportti)
+
+## Idea:
+Idea perustuu appiin jonka ystävä haluaisi minun rakentavan. Appissä käyttäjät voivat luoda tapahtumia, ja muut käyttäjät voivat löytää tapahtumia (ja mennä paikan päälle) ja olla vuorovaikutuksessa niiden kanssa kommentoimalla. Tavoite on saada ihmiset liikkeelle ja sosialisoimaan.
+
+## Sisältö:
+Sivulla voi luoda tilin, login, luoda tapahtumia (nimi, päivämäärä, aika, tiedot, lokaatio), ja selailla näitä 'event feed':in kautta. Yksittäisiä tapahtumia voi katsella ja kommentoida.
+
+## Visualisuus ja selkeys:
+'Create Event'iin ei pääse ilman että on kirjautunut, samoin ei myöskään voi kommentoida tapahtumiin ilman että on kirjautunut. Create eventissä estetään tapahtuman julkaisua ellei ole täyttänyt tarpeelliset kentät (Nimi, päivämäärä ja aika, tiedot. Karttatiedot ovat vapaaehtoista.). Liian pitkät tapahtumakommentit lyhennetään mutta voidaan avata painamalla 'show more.' - ettei kommenttikenttää pysty spammaa pitkillä viesteillä mitkä tukkii sitten koko homman, kommentit ovat samoin 256 char limited.
+
+## Samanlaisuus:
+Sivustolla on samanlainen navigointi ja ulkoasu.
+
+## Responsivisuus:
+Valitettavasti käytössäni on vain pöytäkone ja oma Samsung puhelin, mutta tuli tilanteita missä piti muokata näkymää että näyttäisi paremmalta luurilla. Esimerkki:
+```
+      <style>
+        {`
+          .char-counter {
+            text-align: right; /* Desktop default */
+            font-size: 0.8rem;
+          }
+
+          @media (max-width: 600px) {
+            .comment-input-row {
+              flex-direction: column;
+            }
+            .post-button {
+              align-self: flex-start;
+            }
+            .char-counter {
+              text-align: left; /* Override for mobile */
+            }
+          }
+        `}
+      </style>
+```
+Tämän lisäksi, sivusto on responsiivinen selaimen koon kanssa ja siirtää napit/navigoinnin/yms selaimen koon mukaan.
+
+## Autentikointi, tietokanta, ja kolmas osapuoli
+Sivusto käyttää Firebasea kirjautumista varten, Firestorea säilyttämään tapahtumien metadatan ja kommentit. Leaflet karttaominaisuus toimii kolmantena tekijänä.
+
+## Toimivuus eri selaimmilla:
+Microsoft Edgellä ja Google Chromella sivusto näyttää identtiseltä. Google Chrome Androidilla toimii, ja siinä on joitakin asioita siirrelty että näyttää hyvältä.
+
+## Latautumisaika:
+
+#### Desktop:
+![Desktop Performance](./.performance-desktop.png)
+
+Pöytäkoneella kaikki sujuu erittäin hyvin.
+
+#### Mobile:
+![Mobile Performance](./.performance-mobile.png)
+
+Mobiililla on parannettavaa:
+`Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored`
+- Tämän korjaaminen nopeuttaisi sivun lataamisaikaa.
+`Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimising image size`
+- Kuvien filetyypin muuttaminen png -> webp, avif vähentää ladattavan tiedon määrää.
+- Caching myös vähentäisi ladattavan tiedon määrää.
+
+# Community Event Hub (Vanha julkaisu)
 
 ## Tavoite:
 Käyttäjät voivat luoda tapahtumia, ja muut käyttäjät voivat olla vuorovaikutuksessa niiden kanssa ilmoittautumalla, liittymällä mukaan, kommentoimalla ja lisäämällä kuvia tapahtumasta. Tavoite on saada ihmiset liikkeelle ja sosialisoimaan.
