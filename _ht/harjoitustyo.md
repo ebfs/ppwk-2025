@@ -63,12 +63,12 @@ Microsoft Edgellä ja Google Chromella sivusto näyttää identtiseltä. Google 
 ## Latautumisaika:
 
 #### Desktop:
-![Desktop Performance](./ht/performance-desktop.png)
+![Desktop Performance](../ht/performance-desktop.png)
 
 Pöytäkoneella kaikki sujuu erittäin hyvin.
 
 #### Mobile:
-![Mobile Performance](./ht/performance-mobile.png)
+![Mobile Performance](../ht/performance-mobile.png)
 
 Mobiililla on parannettavaa:
 
