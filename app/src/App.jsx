@@ -8,6 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute.jsx';
 import socialButterfly from './assets/socialButterfly.png';
 import easterEggImg from './assets/easterEgg.jfif';
 import './App.css';
+import "leaflet/dist/leaflet.css";
 
 function App() {
   const [clickCount, setClickCount] = useState(0);
