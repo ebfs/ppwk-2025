@@ -63,17 +63,21 @@ Microsoft Edgellä ja Google Chromella sivusto näyttää identtiseltä. Google 
 ## Latautumisaika:
 
 #### Desktop:
-![Desktop Performance](./.performance-desktop.png)
+![Desktop Performance](./performance-desktop.png)
 
 Pöytäkoneella kaikki sujuu erittäin hyvin.
 
 #### Mobile:
-![Mobile Performance](./.performance-mobile.png)
+![Mobile Performance](./performance-mobile.png)
 
 Mobiililla on parannettavaa:
+
 `Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored`
+
 - Tämän korjaaminen nopeuttaisi sivun lataamisaikaa.
+
 `Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimising image size`
+
 - Kuvien filetyypin muuttaminen png -> webp, avif vähentää ladattavan tiedon määrää.
 - Caching myös vähentäisi ladattavan tiedon määrää.
 
