@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db, auth } from "../firebase"; // make sure auth is imported
 import { collection, addDoc, Timestamp } from "firebase/firestore";
+import MapPicker from "../components/MapPicker";
 
 function CreateEvent() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ function CreateEvent() {
   const [hour, setHour] = useState("00");
   const [minute, setMinute] = useState("00");
   const [error, setError] = useState("");
+  const [location, setLocation] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,20 +34,28 @@ function CreateEvent() {
       return;
     }
 
-    try {
-      await addDoc(collection(db, "events"), {
-        title,
-        description,
-        datetime: Timestamp.fromDate(eventDate),
-        createdAt: Timestamp.now(),
-        createdBy: user.uid,  // <-- Add the user ID here
-      });
-      navigate("/"); // go back to feed
-    } catch (err) {
-      console.error(err);
-      setError("Failed to create event.");
-    }
-  };
+try {
+  await addDoc(collection(db, "events"), {
+    title,
+    description,
+    datetime: Timestamp.fromDate(eventDate),
+    createdAt: Timestamp.now(),
+    createdBy: user.uid,
+    location: location
+      ? {
+          lat: location.lat,
+          lng: location.lng
+        }
+      : null
+  });
+
+  navigate("/"); // go back to feed
+} catch (err) {
+  console.error(err);
+  setError("Failed to create event.");
+}
+
+}; 
 
   return (
     <form className="create-event-form" onSubmit={handleSubmit}>
@@ -92,6 +102,14 @@ function CreateEvent() {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
+
+<MapPicker onSelect={setLocation} />
+
+{location && (
+  <p style={{ fontSize: "0.9rem", marginTop: "0.5rem" }}>
+    Selected location: {location.lat.toFixed(4)}, {location.lng.toFixed(4)}
+  </p>
+)}      
 
       <button type="submit">Create Event</button>
     </form>

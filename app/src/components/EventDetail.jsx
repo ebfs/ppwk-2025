@@ -12,6 +12,8 @@ import {
   serverTimestamp
 } from "firebase/firestore";
 import { useAuth } from "./AuthContext"; // adjust path if needed
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 export default function EventDetail() {
   const { id } = useParams();
@@ -115,9 +117,35 @@ export default function EventDetail() {
     <div style={{ padding: "1rem", maxWidth: "800px", margin: "0 auto" }}>
       <h2>{event.title || "Untitled Event"}</h2>
       <p style={{ fontWeight: "bold" }}>{formattedDate}</p>
-      {event.location && <p>Location: {event.location}</p>}
       {event.createdBy && <p>Created by: {event.createdBy}</p>}
       <p>{event.description || "No description provided."}</p>
+
+      {/* Event location */}
+      {event.location?.lat && event.location?.lng && (
+        <div style={{ marginTop: "1rem" }}>
+          <p style={{ fontWeight: "bold" }}>Event Location</p>
+          <p style={{ fontSize: "0.9rem" }}>
+            Coordinates: {event.location.lat.toFixed(4)}, {event.location.lng.toFixed(4)}
+          </p>
+          <MapContainer
+            center={[event.location.lat, event.location.lng]}
+            zoom={13}
+            scrollWheelZoom={false}
+            style={{
+              height: "250px",
+              width: "100%",
+              borderRadius: "0.5rem",
+              marginTop: "0.5rem"
+            }}
+          >
+            <TileLayer
+              attribution="© OpenStreetMap contributors"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[event.location.lat, event.location.lng]} />
+          </MapContainer>
+        </div>
+      )}
 
       {/* Comment input */}
       {user && (
@@ -129,7 +157,8 @@ export default function EventDetail() {
             backgroundColor: "#386c46",
             display: "flex",
             flexDirection: "column",
-            gap: "0.5rem"
+            gap: "0.5rem",
+            marginTop: "1rem"
           }}
         >
           <div className="comment-input-row" style={{ display: "flex", gap: "0.5rem" }}>
@@ -179,7 +208,8 @@ export default function EventDetail() {
           padding: "1rem",
           maxHeight: "300px",
           overflowY: "auto",
-          backgroundColor: "#386c46"
+          backgroundColor: "#386c46",
+          marginTop: "0.5rem"
         }}
         ref={commentsRefDiv}
       >
@@ -240,26 +270,26 @@ export default function EventDetail() {
         </ul>
       </div>
 
-        <style>
+      <style>
         {`
-            .char-counter {
-              text-align: right; /* Desktop default */
-              font-size: 0.8rem;
-            }
+          .char-counter {
+            text-align: right; /* Desktop default */
+            font-size: 0.8rem;
+          }
 
-            @media (max-width: 600px) {
-              .comment-input-row {
-                flex-direction: column;
-              }
-              .post-button {
-                align-self: flex-start;
-              }
-              .char-counter {
-                text-align: left; /* Override for mobile */
-              }
+          @media (max-width: 600px) {
+            .comment-input-row {
+              flex-direction: column;
             }
-          `}
-        </style>
+            .post-button {
+              align-self: flex-start;
+            }
+            .char-counter {
+              text-align: left; /* Override for mobile */
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
