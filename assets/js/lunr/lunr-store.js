@@ -1,6 +1,6 @@
 var store = [{
         "title": "Harjoitustyö",
-        "excerpt":"Social Butterfly arvioinnissa käytetyt kriteerit: idea = jokin käytännöllinen sivusto, jossa on hyödyllistä tietoa sisältö = sivustolla on toimintoja, joilla voidaan tietoa tutkia visuaalisuus ja selkeys = Nielsen heuristiikkojen mukainen käytettävyys sivuilla on samanlainen navigointi ja ulkoasu, joka täyttää WCAG eli Web Content Accessibility Guidelines -ohjeistuksen responsiivisuus = toimivuus eri...","categories": [],
+        "excerpt":"Social Butterfly Apin löydät täältä arvioinnissa käytetyt kriteerit: idea = jokin käytännöllinen sivusto, jossa on hyödyllistä tietoa sisältö = sivustolla on toimintoja, joilla voidaan tietoa tutkia visuaalisuus ja selkeys = Nielsen heuristiikkojen mukainen käytettävyys sivuilla on samanlainen navigointi ja ulkoasu, joka täyttää WCAG eli Web Content Accessibility Guidelines -ohjeistuksen responsiivisuus...","categories": [],
         "tags": [],
         "url": "/ppwk-2025/harjoitustyo/",
         "teaser": null
