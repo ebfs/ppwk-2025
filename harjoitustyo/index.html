@@ -11,7 +11,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Harjoitustyö - Pilvipalvelut web-kehityksessä</title>
-<meta name="description" content="Community Event Hub">
+<meta name="description" content="Social Butterfly">
 
 
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="/ppwk-2025/harjoitustyo/">
 
 
-  <meta property="og:description" content="Community Event Hub">
+  <meta property="og:description" content="Social Butterfly">
 
 
 
@@ -30,7 +30,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-12-14T18:16:40+00:00">
+  <meta property="article:published_time" content="2025-12-14T18:51:27+00:00">
 
 
 
@@ -171,7 +171,83 @@
     
       <h1 id="page-title" class="page__title">Harjoitustyö</h1>
     
-    <h1 id="community-event-hub">Community Event Hub</h1>
+    <h1 id="social-butterfly">Social Butterfly</h1>
+
+<h2 id="arvioinnissa-käytetyt-kriteerit">arvioinnissa käytetyt kriteerit:</h2>
+<ul>
+  <li>idea = jokin käytännöllinen sivusto, jossa on hyödyllistä tietoa</li>
+  <li>sisältö = sivustolla on toimintoja, joilla voidaan tietoa tutkia</li>
+  <li>visuaalisuus ja selkeys = Nielsen heuristiikkojen mukainen käytettävyys</li>
+  <li>sivuilla on samanlainen navigointi ja ulkoasu, joka täyttää WCAG eli Web Content Accessibility Guidelines -ohjeistuksen</li>
+  <li>responsiivisuus = toimivuus eri kokoisilla päätelaitteilla (testaa ja tee lyhyt raportti)</li>
+  <li>autentikoinnin (Firebase), tietokannan (Firestore) ja kolmannen osapuolien palveluiden (esimerkiksi REST-rajapinnan yli) käyttö</li>
+  <li>toimivuus uusimmilla selaimilla (testaa ja tee lyhyt raportti)</li>
+  <li>sivujen latautumisaika kohtuullinen (testaa ja tee lyhyt raportti)</li>
+</ul>
+
+<h2 id="idea">Idea:</h2>
+<p>Idea perustuu appiin jonka ystävä haluaisi minun rakentavan. Appissä käyttäjät voivat luoda tapahtumia, ja muut käyttäjät voivat löytää tapahtumia (ja mennä paikan päälle) ja olla vuorovaikutuksessa niiden kanssa kommentoimalla. Tavoite on saada ihmiset liikkeelle ja sosialisoimaan.</p>
+
+<h2 id="sisältö">Sisältö:</h2>
+<p>Sivulla voi luoda tilin, login, luoda tapahtumia (nimi, päivämäärä, aika, tiedot, lokaatio), ja selailla näitä ‘event feed’:in kautta. Yksittäisiä tapahtumia voi katsella ja kommentoida.</p>
+
+<h2 id="visualisuus-ja-selkeys">Visualisuus ja selkeys:</h2>
+<p>‘Create Event’iin ei pääse ilman että on kirjautunut, samoin ei myöskään voi kommentoida tapahtumiin ilman että on kirjautunut. Create eventissä estetään tapahtuman julkaisua ellei ole täyttänyt tarpeelliset kentät (Nimi, päivämäärä ja aika, tiedot. Karttatiedot ovat vapaaehtoista.). Liian pitkät tapahtumakommentit lyhennetään mutta voidaan avata painamalla ‘show more.’ - ettei kommenttikenttää pysty spammaa pitkillä viesteillä mitkä tukkii sitten koko homman, kommentit ovat samoin 256 char limited.</p>
+
+<h2 id="samanlaisuus">Samanlaisuus:</h2>
+<p>Sivustolla on samanlainen navigointi ja ulkoasu.</p>
+
+<h2 id="responsivisuus">Responsivisuus:</h2>
+<p>Valitettavasti käytössäni on vain pöytäkone ja oma Samsung puhelin, mutta tuli tilanteita missä piti muokata näkymää että näyttäisi paremmalta luurilla. Esimerkki:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      &lt;style&gt;
+        {`
+          .char-counter {
+            text-align: right; /* Desktop default */
+            font-size: 0.8rem;
+          }
+
+          @media (max-width: 600px) {
+            .comment-input-row {
+              flex-direction: column;
+            }
+            .post-button {
+              align-self: flex-start;
+            }
+            .char-counter {
+              text-align: left; /* Override for mobile */
+            }
+          }
+        `}
+      &lt;/style&gt;
+</code></pre></div></div>
+<p>Tämän lisäksi, sivusto on responsiivinen selaimen koon kanssa ja siirtää napit/navigoinnin/yms selaimen koon mukaan.</p>
+
+<h2 id="autentikointi-tietokanta-ja-kolmas-osapuoli">Autentikointi, tietokanta, ja kolmas osapuoli</h2>
+<p>Sivusto käyttää Firebasea kirjautumista varten, Firestorea säilyttämään tapahtumien metadatan ja kommentit. Leaflet karttaominaisuus toimii kolmantena tekijänä.</p>
+
+<h2 id="toimivuus-eri-selaimmilla">Toimivuus eri selaimmilla:</h2>
+<p>Microsoft Edgellä ja Google Chromella sivusto näyttää identtiseltä. Google Chrome Androidilla toimii, ja siinä on joitakin asioita siirrelty että näyttää hyvältä.</p>
+
+<h2 id="latautumisaika">Latautumisaika:</h2>
+
+<h4 id="desktop">Desktop:</h4>
+<p><img src="./.performance-desktop.png" alt="Desktop Performance" /></p>
+
+<p>Pöytäkoneella kaikki sujuu erittäin hyvin.</p>
+
+<h4 id="mobile">Mobile:</h4>
+<p><img src="./.performance-mobile.png" alt="Mobile Performance" /></p>
+
+<p>Mobiililla on parannettavaa:
+<code class="language-plaintext highlighter-rouge">Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored</code></p>
+<ul>
+  <li>Tämän korjaaminen nopeuttaisi sivun lataamisaikaa.
+<code class="language-plaintext highlighter-rouge">Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimising image size</code></li>
+  <li>Kuvien filetyypin muuttaminen png -&gt; webp, avif vähentää ladattavan tiedon määrää.</li>
+  <li>Caching myös vähentäisi ladattavan tiedon määrää.</li>
+</ul>
+
+<h1 id="community-event-hub-vanha-julkaisu">Community Event Hub (Vanha julkaisu)</h1>
 
 <h2 id="tavoite">Tavoite:</h2>
 <p>Käyttäjät voivat luoda tapahtumia, ja muut käyttäjät voivat olla vuorovaikutuksessa niiden kanssa ilmoittautumalla, liittymällä mukaan, kommentoimalla ja lisäämällä kuvia tapahtumasta. Tavoite on saada ihmiset liikkeelle ja sosialisoimaan.</p>

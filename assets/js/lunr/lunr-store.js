@@ -1,6 +1,6 @@
 var store = [{
         "title": "Harjoitustyö",
-        "excerpt":"Community Event Hub Tavoite: Käyttäjät voivat luoda tapahtumia, ja muut käyttäjät voivat olla vuorovaikutuksessa niiden kanssa ilmoittautumalla, liittymällä mukaan, kommentoimalla ja lisäämällä kuvia tapahtumasta. Tavoite on saada ihmiset liikkeelle ja sosialisoimaan. Ominaisuudet: Tapahtuman luominen Otsikko, kuvaus, päivämäärä/aika, sijainti (valinnainen: karttapinni). Mahdollisesti tunnisteet tai kategoriat (esim. “Musiikki”, “Urheilu”, “Meetup”). Tapahtumasyöte /...","categories": [],
+        "excerpt":"Social Butterfly arvioinnissa käytetyt kriteerit: idea = jokin käytännöllinen sivusto, jossa on hyödyllistä tietoa sisältö = sivustolla on toimintoja, joilla voidaan tietoa tutkia visuaalisuus ja selkeys = Nielsen heuristiikkojen mukainen käytettävyys sivuilla on samanlainen navigointi ja ulkoasu, joka täyttää WCAG eli Web Content Accessibility Guidelines -ohjeistuksen responsiivisuus = toimivuus eri...","categories": [],
         "tags": [],
         "url": "/ppwk-2025/harjoitustyo/",
         "teaser": null
